@@ -52,3 +52,23 @@ console.log(arr7);
 var arr8 = Array(1, 2, 3);
 console.log(arr8);
 // expected output: [1, 2, 3]
+
+// Exercise
+// Find the length of an array in JavaScript without using the length method (built-in array method/function)
+var arr9 = [1, 2, 3, 4, 5, 6];
+
+// Solution
+var arr9 = [1, 2, 3, 4, 5, 6];
+
+var length = 0;
+
+while (true) {
+  if (arr9[length] === undefined) {
+    break;
+  } else {
+    length++;
+  }
+}
+
+console.log(length);
+// expected output: 6
