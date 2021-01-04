@@ -85,3 +85,74 @@ console.log(name2.padEnd(15, 'a'));
 console.log('S'.repeat(10));
 // expected output: (See the Chrome DevTools Console)
 // SSSSSSSSSS
+
+// Chapter Fifteen
+// 141. Let vs Const vs Var - What is the Difference
+
+// var vs let vs const
+// const a = 10;
+// a = 100;
+
+// console.log(a);
+// expected output: (See the Chrome DevTools Console)
+// "a" is read-only
+
+let a = 10;
+a = 100;
+
+console.log(a);
+// expected output: (See the Chrome DevTools Console)
+// 100
+
+if (true) {
+  var a2 = 10;
+}
+
+console.log(a2);
+// expected output: (See the Chrome DevTools Console)
+// 10
+
+for (var i = 0; i < 5; i++) {
+
+}
+
+console.log(i);
+// expected output: (See the Chrome DevTools Console)
+// 5
+
+if (true) {
+  let a3 = 10;
+}
+
+// console.log(a3);
+// expected output: (See the Chrome DevTools Console)
+// Uncaught ReferenceError: a3 is not defined
+
+for (let i2 = 0; i2 < 5; i2++) {
+
+}
+
+// console.log(i2);
+// expected output: (See the Chrome DevTools Console)
+// Uncaught ReferenceError: i2 is not defined
+
+{
+  let iAmLet = 'I am let';
+}
+
+// console.log(iAmLet);
+// expected output: (See the Chrome DevTools Console)
+// Uncaught ReferenceError: iAmLet is not defined
+
+// IIFE (Immediately Invoked Function Expression)
+(function () {
+  var abc = 'ABC';
+  console.log(abc);
+})();
+
+// expected output: (See the Chrome DevTools Console)
+// ABC (index.js:150)
+
+// console.log(abc);
+// expected output: (See the Chrome DevTools Console)
+// Uncaught ReferenceError: abc is not defined (index.js:156)
