@@ -156,3 +156,27 @@ for (let i2 = 0; i2 < 5; i2++) {
 // console.log(abc);
 // expected output: (See the Chrome DevTools Console)
 // Uncaught ReferenceError: abc is not defined (index.js:156)
+
+// Chapter Fifteen
+// 142. New Arrow Function Syntax in ES6
+
+// Function declaration
+/* function add(a, b) {
+  return a + b;
+} */
+
+// Function expression
+/* let sum = function (a, b) {
+  return a + b;
+}; */
+
+// Arrow function/Arrow function expressions
+let add = (a, b) => a + b; // implicit return
+console.log(add(45, 50));
+// expected output: (See the Chrome DevTools Console)
+// 95
+
+let sqr = x => x * x;
+console.log(sqr(5));
+// expected output: (See the Chrome DevTools Console)
+// 25
