@@ -180,3 +180,165 @@ let sqr = x => x * x;
 console.log(sqr(5));
 // expected output: (See the Chrome DevTools Console)
 // 25
+
+// Chapter Fifteen
+// 143. Arrow Functions and This - What is the Benefit
+
+// 'this' keyword:
+// Browser - Window object
+// Node.js - Global object
+
+function testMe() { // The whole system is running on Babel (babel.js) - Babel is a JavaScript compiler
+  console.log(this); // If 'this' run in strict mode ("use strict") -> return undefined
+}
+
+testMe();
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+function my() { // The whole system is running on Babel (babel.js) - Babel is a JavaScript compiler
+  console.log(this); // If 'this' run in strict mode ("use strict") -> return undefined
+}
+
+my();
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+// Open and see the new Chrome DevTools Console
+/* function my() {
+  console.log(this);
+}
+
+my(); */
+// expected output: (See the new Chrome DevTools Console)
+// -> Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+let obj = {
+  name: 'S M Anwarul Islam',
+  print: function () {
+    console.log(this);
+  }
+};
+
+obj.print();
+// expected output: (See the Chrome DevTools Console)
+// -> {name: "S M Anwarul Islam", print: ƒ}
+
+let obj2 = { // Babel, Webpack | strict mode ("use strict")
+  name2: 'S M Anwarul Islam',
+  print2: () => {
+    console.log(this);
+  }
+};
+
+obj2.print2();
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+// Non-strict mode ("use strict")
+// Open and see the new Chrome DevTools Console
+/* let obj2 = {
+  name2: 'S M Anwarul Islam',
+  print2: () => {
+    console.log(this);
+  }
+};
+
+obj2.print2(); */
+// expected output: (See the new Chrome DevTools Console)
+// -> Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+function testMe2() {
+  console.log(this);
+}
+
+testMe2.call({});
+// expected output: (See the Chrome DevTools Console)
+// -> {}
+
+/* let obj3 = {
+  name3: 'S M Anwarul Islam',
+  print3: function () {
+    setTimeout(function () {
+      alert(`Hello, ${this.name3}`);
+    }, 1000);
+  }
+};
+
+obj3.print3(); */
+// expected output: (See the Chrome DevTools Console)
+// Hello, undefined
+
+/* let obj3 = {
+  name3: 'S M Anwarul Islam',
+  print3: function () {
+    console.log(this.name3);
+    setTimeout(function () { // function () {} -> Normal function/Pure function
+      alert(`Hello, ${this.name3}`);
+    }, 1000);
+  }
+};
+
+obj3.print3(); */
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam
+// Hello, undefined
+
+/* let obj3 = {
+  name3: 'S M Anwarul Islam',
+  print3: function () {
+    console.log(this.name3);
+    setTimeout(function () {  // function () {} -> Normal function/Pure function
+      console.log(this); // Window object
+      alert(`Hello, ${this.name3}`);
+    }, 1000);
+  }
+};
+
+obj3.print3(); */
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam
+// -> Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+// Hello, undefined
+
+let obj3 = {
+  name3: 'S M Anwarul Islam',
+  print3: function () {
+    let self = this; // A solution between the two
+    setTimeout(function () {
+      console.log(`Hello, ${self.name3}`);
+    }, 1000);
+  }
+};
+
+obj3.print3();
+// expected output: (See the Chrome DevTools Console)
+// Hello, S M Anwarul Islam
+
+let obj4 = {
+  name4: 'S M Anwarul Islam',
+  print4: function () {
+    setTimeout(function () { // function () {} -> Normal function/Pure function
+      console.log(`Hello, ${this.name4}`);
+    }.bind(this), 1000); // This is another solution
+  }
+};
+
+obj4.print4();
+// expected output: (See the Chrome DevTools Console)
+// Hello, S M Anwarul Islam
+
+let obj5 = {
+  name5: 'S M Anwarul Islam',
+  print5: function () {
+    setTimeout(() => {  // A better solution to use the arrow function
+      console.log(this); // Refer to the parent object/this
+      console.log(`Hello, ${this.name5}`); // Refer to the parent object/this
+    }, 1000);
+  }
+};
+
+obj5.print5();
+// expected output: (See the Chrome DevTools Console)
+// -> {name5: "S M Anwarul Islam", print5: ƒ}
+// Hello, S M Anwarul Islam
