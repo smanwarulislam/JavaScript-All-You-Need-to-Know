@@ -342,3 +342,80 @@ obj5.print5();
 // expected output: (See the Chrome DevTools Console)
 // -> {name5: "S M Anwarul Islam", print5: ƒ}
 // Hello, S M Anwarul Islam
+
+// Chapter Fifteen
+// 144. How to Use Default Parameter in ES6
+
+function sqr2(n) {
+  return n * n; // undefined * undefined = NaN
+}
+
+console.log(sqr2());
+// expected output: (See the Chrome DevTools Console)
+// NaN
+
+// To get 1 value or 1 value by default
+// Some previous solutions
+function sqr3(n) {
+  if (!n) { // This is a solution
+    n = 1;
+  }
+
+  return n * n;
+}
+
+console.log(sqr3());
+// expected output: (See the Chrome DevTools Console)
+// 1
+
+function sqr4(n) {
+  n = n || 1; // This is another way to a solution
+
+  return n * n;
+}
+
+console.log(sqr4());
+// expected output: (See the Chrome DevTools Console)
+// 1
+
+function sqr5(n = 1) { // default parameters
+  return n * n;
+}
+
+console.log(sqr5(5));
+// expected output: (See the Chrome DevTools Console)
+// 25
+
+function sqr6(n = 1) { // default parameters | This is the best solution
+  return n * n;
+}
+
+console.log(sqr6());
+// expected output: (See the Chrome DevTools Console)
+// 1
+
+// It has a bad side (default parameters)
+function greet(name, msg) {
+  console.log(`${msg}! ${name}`);
+}
+
+greet('S M Anwarul Islam', 'Hello');
+// expected output: (See the Chrome DevTools Console)
+// Hello! S M Anwarul Islam
+
+function greet2(name, msg) {
+  console.log(`${msg}! ${name}`);
+}
+
+greet2(null, 'Hello');
+// expected output: (See the Chrome DevTools Console)
+// Hello! null
+
+function greet3(name = 'S M Anwarul Islam', msg = 'Hello') { // default parameters
+  console.log(name.length);
+  console.log(`${msg}! ${name}`);
+}
+
+greet3(null, 'Hello'); // Note: Never be used 'null' or 'undefined' as an argument
+// expected output: (See the Chrome DevTools Console)
+// -> Uncaught TypeError: Cannot read property 'length' of null
