@@ -411,11 +411,99 @@ greet2(null, 'Hello');
 // expected output: (See the Chrome DevTools Console)
 // Hello! null
 
-function greet3(name = 'S M Anwarul Islam', msg = 'Hello') { // default parameters
+/* function greet3(name = 'S M Anwarul Islam', msg = 'Hello') { // default parameters
   console.log(name.length);
   console.log(`${msg}! ${name}`);
 }
 
-greet3(null, 'Hello'); // Note: Never be used 'null' or 'undefined' as an argument
+greet3(null, 'Hello'); */ // Note: Never be used 'null' or 'undefined' as an argument
 // expected output: (See the Chrome DevTools Console)
 // -> Uncaught TypeError: Cannot read property 'length' of null
+
+// Chapter Fifteen
+// 145. Rest and Spread Operator in ES6
+
+// Rest parameters (...)
+
+// The way used to work before
+function sum() {
+  let sum = 0;
+
+  for (let i = 0; i < arguments.length; i++) { // Argument Object | arguments -> JavaScript Object
+    sum += arguments[i];
+  }
+
+  return sum;
+}
+
+console.log(sum(1, 2, 3, 4, 5));
+// expected output: (See the Chrome DevTools Console)
+// 15
+
+function sum2(...rest) {
+  console.log(rest);
+}
+
+console.log(sum2(1, 2, 3, 4, 5));
+// expected output: (See the Chrome DevTools Console)
+// -> (5) [1, 2, 3, 4, 5]
+
+function sum3(...rest) {
+  return rest.reduce((a, b) => a + b); // The reduce() method
+}
+
+console.log(sum3(1, 2, 3, 4, 5));
+// expected output: (See the Chrome DevTools Console)
+// 15
+
+// Spread syntax/operator (...)
+
+let a3 = [1, 2, 3];
+console.log(a3);
+// expected output: (See the Chrome DevTools Console)
+// -> (3) [1, 2, 3]
+
+let a4 = [1, 2, 3];
+console.log(...a4);
+// expected output: (See the Chrome DevTools Console)
+// 1 2 3
+
+/* let obj6 = {
+  a: 10,
+  b: 20,
+  c: 30
+}; */
+
+// let obj7 = obj6; // Objects are mutable in JavaScript
+
+/* let obj8 = {
+  ...obj6
+}; */
+
+// Setup to configure via babel, webpack
+// expected output: (See the Chrome DevTools Console)
+// SyntaxError: Unexpected token (480:2)
+
+// If we copy the code and paste it to the Chrome DevTools Console
+/* let obj6 = {
+  a: 10,
+  b: 20,
+  c: 30
+}; */
+
+/* let obj8 = {
+  ...obj6
+}; */
+
+// console.log(obj8);
+// expected output: (See the Chrome DevTools Console)
+// -> {a: 10, b: 20, c: 30}
+
+// console.log(obj6 === obj8);
+// expected output: (See the Chrome DevTools Console)
+// false
+
+// let obj9 = obj6;
+// console.log(obj9 === obj6);
+// expected output: (See the Chrome DevTools Console)
+// true
