@@ -540,3 +540,52 @@ let obj11 = {
 obj11.print6();
 // expected output: (See the Chrome DevTools Console)
 // -> {a6: 10, b3: 20, print6: ƒ}
+
+// Chapter Fifteen
+// 147. What is Destructuring in ES6
+
+let person = {
+  name6: 'S M Anwarul Islam',
+  email: 'engg.anwarbd@gmail.com'
+};
+
+// let name6 = person.name6;
+// let email = person.email;
+
+// Object destructuring
+let { name6, email } = person;
+console.log(name6, email);
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam engg.anwarbd@gmail.com
+
+let person2 = {
+  name7: 'S M Anwarul Islam',
+  email2: 'engg.anwarbd@gmail.com',
+  address: {
+    city: 'Dhaka',
+    country: 'Bangladesh'
+  }
+};
+
+// let { name7, email2, address } = person2;
+// console.log(name7, email2, address);
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam engg.anwarbd@gmail.com -> {city: "Dhaka", country: "Bangladesh"}
+
+let { name7, email2, address: { city, country } } = person2;
+console.log(name7, email2, city, country);
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam engg.anwarbd@gmail.com Dhaka Bangladesh
+
+// Array destructuring
+let arr = [1, 2, 3, 4, 5];
+
+// let [first, second] = arr;
+// console.log(first, second);
+// expected output: (See the Chrome DevTools Console)
+// 1 2
+
+let [first, second, , , last] = arr;
+console.log(first, second, last);
+// expected output: (See the Chrome DevTools Console)
+// 1 2 5
