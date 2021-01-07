@@ -589,3 +589,34 @@ let [first, second, , , last] = arr;
 console.log(first, second, last);
 // expected output: (See the Chrome DevTools Console)
 // 1 2 5
+
+// Chapter Fifteen
+// 148. Object fromEntries Method in ES6
+
+// Transform an object into an array
+let obj12 = {
+  a7: 10,
+  b4: 20
+};
+
+console.log(Object.entries(obj12)); // The Object.entries() method
+// expected output: (See the Chrome DevTools Console)
+/* -> (2) [Array(2), Array(2)]
+  -> 0: (2) ["a7", 10]
+    0: "a7"
+    1: 10
+  -> 1: (2) ["b4", 20]
+    0: "b4"
+    1: 20 */
+
+// Converting an array to an object
+let arrObj = [
+  ['a7', 10], // ['key', value]
+  ['b4', 20] // ['key', value]
+];
+
+console.log(Object.fromEntries(arrObj)); // The Object.fromEntries() method
+// expected output: (See the Chrome DevTools Console)
+/* -> {a7: 10, b4: 20}
+  a7: 10
+  b4: 20 */
