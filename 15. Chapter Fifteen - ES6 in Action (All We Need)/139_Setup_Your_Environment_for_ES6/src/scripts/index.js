@@ -507,3 +507,36 @@ console.log(...a4);
 // console.log(obj9 === obj6);
 // expected output: (See the Chrome DevTools Console)
 // true
+
+// Chapter Fifteen
+// 146. Enhance Object in ES6
+
+let a5 = 10, b2 = 20;
+
+let obj10 = {
+  // a5: a5,
+  a5, // object short notation
+  // b2: b2
+  b2 // object short notation
+};
+
+console.log(obj10);
+// expected output: (See the Chrome DevTools Console)
+// -> {a5: 10, b2: 20}
+
+let a6 = 10, b3 = 20;
+
+let obj11 = {
+  a6,
+  b3,
+/*   print6: function () {
+    console.log(this);
+  } */
+  print6() { // concise methods
+    console.log(this);
+  }
+};
+
+obj11.print6();
+// expected output: (See the Chrome DevTools Console)
+// -> {a6: 10, b3: 20, print6: ƒ}
