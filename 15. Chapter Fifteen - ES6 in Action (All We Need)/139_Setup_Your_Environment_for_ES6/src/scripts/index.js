@@ -620,3 +620,55 @@ console.log(Object.fromEntries(arrObj)); // The Object.fromEntries() method
 /* -> {a7: 10, b4: 20}
   a7: 10
   b4: 20 */
+
+// Chapter Fifteen  
+// 149. What are Symbols in ES6
+
+/* JavaScript provides two types of data:
+Primitive data type
+- Number
+- String
+- Boolean
+- Undefined
+- Null
+Object data type/Reference data type */
+
+/* ES6 introduces a new data type (Primitive data type)
+- Symbol */
+
+let s3 = Symbol();
+let s4 = Symbol('test symbol');
+
+console.log(s3);
+// expected output: (See the Chrome DevTools Console)
+// Symbol()
+
+console.log(s4);
+// expected output: (See the Chrome DevTools Console)
+// Symbol(test symbol)
+
+console.log(s3 === s4);
+// expected output: (See the Chrome DevTools Console)
+// false
+
+// There are many methods of Symbol
+/* ES6 - toString() Method
+toString() */
+
+/* ES6 - valueOf() Method
+valueOf() */
+
+// Symbol.iterator
+
+let toss = {
+  HEAD: Symbol('HEAD'),
+  TAIL: Symbol('TAIL')
+};
+
+console.log(toss.HEAD);
+// expected output: (See the Chrome DevTools Console)
+// Symbol(HEAD)
+
+console.log(toss.TAIL);
+// expected output: (See the Chrome DevTools Console)
+// Symbol(TAIL)
