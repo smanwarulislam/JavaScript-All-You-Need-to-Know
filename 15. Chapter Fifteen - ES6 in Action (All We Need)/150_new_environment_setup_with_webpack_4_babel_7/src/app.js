@@ -61,7 +61,7 @@ const arr = [1, 2, 3];
   done: true
   value: undefined */
 
-// Chapter Fifteen  
+// Chapter Fifteen
 // 152. Create Iterator with ES6 Symbol.Iterator Function
 
 // console.log(arr[Symbol.iterator]); // The Symbol is a unique identifier
@@ -132,3 +132,55 @@ console.log(iterateText.next());
 /* -> {value: undefined, done: true}
   done: true
   value: undefined */
+
+// Chapter Fifteen
+// 153. How does For of Loop Work
+
+// The for...of statement
+for (let v of arr) { // v = value
+  console.log(v);
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* 1
+2
+3 */
+
+// String
+// Since the string is iterable
+for (let v of 'S M Anwarul Islam') {
+  console.log(v);
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* S
+
+M
+
+A
+n
+w
+a
+r
+u
+l
+
+I
+s
+l
+a
+m */
+
+// Object
+/* let obj = {
+  a: 10,
+  b: 20
+};
+
+for (let v of obj) {
+  console.log(v);
+} */
+
+// expected output: (See the Chrome DevTools Console)
+/* Uncaught TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method. */
