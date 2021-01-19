@@ -184,3 +184,134 @@ for (let v of obj) {
 // expected output: (See the Chrome DevTools Console)
 /* Uncaught TypeError: Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method. */
+
+// Chapter Fifteen
+// 154. What is Generator Function in ES6
+
+let obj = {
+  start: 1,
+  end: 5,
+  /* [Symbol.iterator]: function () { // [Symbol.iterator] -> Iterator interface implement
+    let currentValue = this.start;
+    const self = this;
+    return {
+      next() {
+        return {
+          done: currentValue > self.end,
+          value: currentValue > self.end ? undefined : currentValue++
+        };
+      }
+    };
+  } */
+  [Symbol.iterator]: function* () { // function* -> Generator
+    let currentValue2 = this.start;
+    while (currentValue2 <= this.end) {
+      yield currentValue2++; // yield -> Keep doing pause
+    }
+  }
+};
+
+let iterate2 = obj[Symbol.iterator]();
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 1}
+
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 2}
+
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 3}
+
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 4}
+
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 5}
+
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: true, value: undefined}
+
+console.log(iterate2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: true, value: undefined}
+
+function* generate() {
+  yield 1; // yield -> pause
+  yield 2; // yield -> pause
+  yield 3; // yield -> pause
+  // return undefined;
+}
+
+let it = generate(); // it for iterator
+console.log(it);
+// expected output: (See the Chrome DevTools Console)
+// -> Generator {_invoke: ƒ}
+
+console.log(it.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 1, done: false}
+
+console.log(it.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 2, done: false}
+
+console.log(it.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 3, done: false}
+
+console.log(it.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: undefined, done: true}
+
+function* generate2(collection2) {
+  for (let i = 0; i < collection2.length; i++) {
+    yield collection2[i];
+  }
+}
+
+let it2 = generate2(arr);
+console.log(it2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 1, done: false}
+
+console.log(it2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 2, done: false}
+
+console.log(it2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 3, done: false}
+
+console.log(it2.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: undefined, done: true}
+
+const arr2 = [10, 22, 35];
+
+function* generate3(collection3) {
+  for (let i = 0; i < collection3.length; i++) {
+    yield collection3[i];
+  }
+}
+
+let it3 = generate3(arr2);
+console.log(it3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 10, done: false}
+
+console.log(it3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 22, done: false}
+
+console.log(it3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 35, done: false}
+
+console.log(it3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: undefined, done: true}
