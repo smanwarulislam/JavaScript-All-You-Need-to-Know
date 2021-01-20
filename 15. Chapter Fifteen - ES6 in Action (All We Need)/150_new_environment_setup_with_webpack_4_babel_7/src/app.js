@@ -315,3 +315,81 @@ console.log(it3.next());
 console.log(it3.next());
 // expected output: (See the Chrome DevTools Console)
 // -> {value: undefined, done: true}
+
+// Chapter Fifteen
+// 155. How to Create Custom Iterable Object
+
+let obj2 = {
+  start: 1,
+  end: 5
+};
+
+// The for...of statement
+/* for (let v of obj2) {
+  console.log(v);
+} */
+
+// expected output: (See the Chrome DevTools Console)
+/* -> bundle.js:9336 Uncaught TypeError: Invalid attempt to iterate non-iterable instance.
+In order to be iterable, non-array objects must have a [Symbol.iterator]() method. */
+
+let obj3 = {
+  start: 1,
+  end: 5,
+  [Symbol.iterator]: function () {
+    let currentValue3 = this.start;
+    const self2 = this;
+    return {
+      next() {
+        return {
+          done: currentValue3 > self2.end,
+          // value: currentValue3++
+          // Extra logic
+          value: currentValue3 > self2.end ? undefined : currentValue3++
+        };
+      }
+    };
+  }
+};
+
+// The for...of statement
+for (let v of obj3) {
+  console.log(v);
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* 1
+2
+3
+4
+5 */
+
+// Works as an iterator
+let iterate3 = obj3[Symbol.iterator]();
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 1}
+
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 2}
+
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 3}
+
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 4}
+
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: false, value: 5}
+
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: true, value: undefined}
+
+console.log(iterate3.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {done: true, value: undefined}
