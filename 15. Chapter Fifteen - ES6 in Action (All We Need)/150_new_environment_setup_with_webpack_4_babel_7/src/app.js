@@ -393,3 +393,150 @@ console.log(iterate3.next());
 console.log(iterate3.next());
 // expected output: (See the Chrome DevTools Console)
 // -> {done: true, value: undefined}
+
+// Chapter Fifteen
+// 156. Understanding Set in ES6
+
+let set = new Set([1, 2, 3]);
+console.log(set);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(3) {1, 2, 3}
+
+let set2 = new Set();
+set2.add(5);
+set2.add(6);
+console.log(set2);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(2) {5, 6}
+
+let set3 = new Set([1, 2, 3]);
+set3.add(5);
+set3.add(6);
+console.log(set3);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(5) {1, 2, 3, 5, 6}
+
+let set4 = new Set([1, 2, 3]);
+set4.add(5);
+set4.add(6);
+set4.add(1);
+set4.add(2);
+console.log(set4);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(5) {1, 2, 3, 5, 6}
+
+console.log(set4.size);
+// expected output: (See the Chrome DevTools Console)
+// 5
+
+// Some collection of the Set
+// clear()
+let set5 = new Set([1, 2, 3]);
+set5.add(5);
+set5.add(6);
+set5.add(1);
+set5.add(2);
+
+// clear()
+set5.clear();
+console.log(set5);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(0) {}
+
+// delete()
+let set6 = new Set([1, 2, 3]);
+set6.add(5);
+set6.add(6);
+set6.add(1);
+set6.add(2);
+
+// delete()
+set6.delete(5);
+console.log(set6);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(4) {1, 2, 3, 6}
+
+// has()
+let set7 = new Set([1, 2, 3]);
+set7.add(5);
+set7.add(6);
+set7.add(1);
+set7.add(2);
+
+// has()
+console.log(set7.has(5));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+console.log(set7);
+// expected output: (See the Chrome DevTools Console)
+// -> Set(5) {1, 2, 3, 5, 6}
+
+// keys()
+console.log(set7.keys());
+// expected output: (See the Chrome DevTools Console)
+// -> SetIterator {1, 2, 3, 5, 6}
+
+// values()
+console.log(set7.values());
+// expected output: (See the Chrome DevTools Console)
+// -> SetIterator {1, 2, 3, 5, 6}
+
+let keyIterate = set7.keys();
+console.log(keyIterate.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 1, done: false}
+
+let valueIterate = set7.values();
+console.log(valueIterate.next());
+// expected output: (See the Chrome DevTools Console)
+// -> {value: 1, done: false}
+
+function isIterable(obj) {
+  return typeof obj[Symbol.iterator] === 'function';
+}
+
+console.log(isIterable({}));
+// expected output: (See the Chrome DevTools Console)
+// false
+
+console.log(isIterable(obj));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+console.log(isIterable([]));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+console.log(isIterable('test'));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+console.log(isIterable(new Number(45)));
+// expected output: (See the Chrome DevTools Console)
+// false
+
+console.log(isIterable(new Set()));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+console.log(isIterable(set));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+// The for...of statement
+for (let v of set7) {
+  console.log(v);
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* 1
+2
+3
+5
+6 */
+
+// entries()
+console.log(set7.entries());
+// expected output: (See the Chrome DevTools Console)
+// -> SetIterator {1 => 1, 2 => 2, 3 => 3, 5 => 5, 6 => 6}
