@@ -540,3 +540,130 @@ for (let v of set7) {
 console.log(set7.entries());
 // expected output: (See the Chrome DevTools Console)
 // -> SetIterator {1 => 1, 2 => 2, 3 => 3, 5 => 5, 6 => 6}
+
+// Chapter Fifteen
+// 157. Understanding Map in ES6
+
+let map = new Map([
+  ['a', 10],
+  ['b', 20],
+  ['c', 30]
+])
+
+console.log(map);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(3) {"a" => 10, "b" => 20, "c" => 30}
+
+// Some collection of the Map
+// set()
+map.set('d', 40);
+console.log(map);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(4) {"a" => 10, "b" => 20, "c" => 30, "d" => 40}
+
+// size()
+console.log(map.size);
+// expected output: (See the Chrome DevTools Console)
+// 4
+
+// delete()
+map.delete('c');
+
+console.log(map.size);
+// expected output: (See the Chrome DevTools Console)
+// 3
+
+console.log(map);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(3) {"a" => 10, "b" => 20, "d" => 40}
+
+// clear()
+map.clear();
+console.log(map);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(0) {}
+
+let map2 = new Map([
+  ['a', 10],
+  ['b', 20],
+  ['c', 30]
+])
+
+// set()
+map2.set('d', 40);
+console.log(map2);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(4) {"a" => 10, "b" => 20, "c" => 30, "d" => 40}
+
+// delete()
+map2.delete('c');
+
+console.log(map2.size);
+// expected output: (See the Chrome DevTools Console)
+// 3
+
+console.log(map2);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(3) {"a" => 10, "b" => 20, "d" => 40}
+
+// get()
+console.log(map2.get('a'));
+// expected output: (See the Chrome DevTools Console)
+// 10
+
+console.log(map2.get('b'));
+// expected output: (See the Chrome DevTools Console)
+// 20
+
+// values()
+console.log(map2.values());
+// expected output: (See the Chrome DevTools Console)
+// -> MapIterator {10, 20, 40}
+
+// keys()
+console.log(map2.keys());
+// expected output: (See the Chrome DevTools Console)
+// -> MapIterator {"a", "b", "d"}
+
+// entries()
+console.log(map2.entries());
+// expected output: (See the Chrome DevTools Console)
+// -> MapIterator {"a" => 10, "b" => 20, "d" => 40}
+
+// The for...of statement
+let map3 = new Map([
+  ['a', 10],
+  ['b', 20],
+  ['c', 30]
+])
+
+// set()
+map3.set('d', 40);
+console.log(map3);
+// expected output: (See the Chrome DevTools Console)
+// -> Map(4) {"a" => 10, "b" => 20, "c" => 30, "d" => 40}
+
+map3.set({name: 'S M Anwarul Islam'}, 30); // key, value
+// expected output: (See the Chrome DevTools Console)
+// -> {name: "S M Anwarul Islam"} 30
+
+for (let [k, v] of map3) { // [k, v] -> key-value destructure from an array
+  console.log(v, k); // v -> value | k -> key
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* 10 "a"
+20 "b"
+30 "c"
+40 "d" */
+
+// The forEach() method
+map3.forEach((v, k) => {
+  console.log(k, v);
+})
+
+// expected output: (See the Chrome DevTools Console)
+/* a 10
+b 20
+c 30
+d 40 */
