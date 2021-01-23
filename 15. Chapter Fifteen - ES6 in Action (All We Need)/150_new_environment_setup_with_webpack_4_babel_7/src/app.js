@@ -745,3 +745,42 @@ console.log(weakSet2.has(b3));
 // weakSet2.delete();
 // weakSet2.addAll();
 // weakSet2.deleteAll();
+
+// Chapter Fifteen
+// 159. What is WeakMap
+
+// Using WeakMap
+// WeakMap()
+
+let weakMap = new WeakMap([[a, 45], [b, 75]]);
+console.log(weakMap);
+// expected output: (See the Chrome DevTools Console)
+/* -> WeakMap {{…} => 45, {…} => 75}
+  -> [[Entries]]
+    -> 0: {Object => 45}
+      -> key: {a: 10}
+         value: 45
+    -> 1: {Object => 75}
+      -> key: {b: 20}
+         value: 75 */
+
+// The methods that are with the WeakMap:
+console.log(weakMap.get(a));
+// expected output: (See the Chrome DevTools Console)
+// 45
+
+let weakMap2 = new WeakMap([[a, 45], [b, 75]]);
+
+a = null;
+
+console.log(weakMap2.get(a));
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+console.log(weakMap2.has(a));
+// expected output: (See the Chrome DevTools Console)
+// false
+
+console.log(weakMap2.has(b));
+// expected output: (See the Chrome DevTools Console)
+// true
