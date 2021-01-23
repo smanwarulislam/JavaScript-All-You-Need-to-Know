@@ -667,3 +667,81 @@ map3.forEach((v, k) => {
 b 20
 c 30
 d 40 */
+
+// Chapter Fifteen
+// 158. What is WeakSet
+
+let a = {a: 10}, b = {b: 20};
+let set8 = new Set([a, b]);
+
+console.log(set8);
+// expected output: (See the Chrome DevTools Console)
+/* -> Set(2) {{…}, {…}}
+  -> [[Entries]]
+    -> 0: Object
+      -> value: {a: 10}
+        a: 10
+    -> 1: Object
+      -> value: {b: 20}
+        b: 20 */
+
+let a2 = {a: 10}, b2 = {b: 20};
+let set9 = new Set([a2, b2]);
+
+a2 = null;
+
+console.log(set9);
+// expected output: (See the Chrome DevTools Console)
+/* -> Set(2) {{…}, {…}}
+  -> [[Entries]]
+    -> 0: Object
+      -> value: {a: 10}
+        a: 10
+    -> 1: Object
+      -> value: {b: 20}
+        b: 20 */
+
+let arr3 = [...set9];
+console.log(arr3);
+// expected output: (See the Chrome DevTools Console)
+/* -> (2) [{…}, {…}]
+  -> 0: {a: 10}
+  -> 1: {b: 20} */
+
+console.log(arr3[0]);
+// expected output: (See the Chrome DevTools Console)
+// -> {a: 10}
+
+// Using the WeakSet object
+// WeakSet()
+
+// Cannot keep any primitive data inside the WeakSet
+// let weakSet = new WeakSet([1, 3]);
+// expected output: (See the Chrome DevTools Console)
+// -> Uncaught TypeError: Invalid value used in weak set
+
+let a3 = {a: 10}, b3 = {b: 20};
+
+let weakSet2 = new WeakSet([a3, b3]);
+console.log(weakSet2);
+// expected output: (See the Chrome DevTools Console)
+/* -> WeakSet {{…}, {…}}
+  -> [[Entries]]
+    No properties */
+
+a3 = null;    
+
+console.log(weakSet2.has(a3));
+// expected output: (See the Chrome DevTools Console)
+// false
+
+console.log(weakSet2.has(b3));
+// expected output: (See the Chrome DevTools Console)
+// true
+
+// The methods that are with the WeakSet:
+// weakSet2.has();
+// weakSet2.add();
+// weakSet2.delete();
+// weakSet2.addAll();
+// weakSet2.deleteAll();
