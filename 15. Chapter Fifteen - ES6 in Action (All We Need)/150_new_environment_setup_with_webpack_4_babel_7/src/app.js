@@ -784,3 +784,78 @@ console.log(weakMap2.has(a));
 console.log(weakMap2.has(b));
 // expected output: (See the Chrome DevTools Console)
 // true
+
+// Chapter Fifteen
+// 160. New Class Syntax in ES6
+
+// Constructor function/Constructor pattern (as usual called Constructor function)
+// Rectangle
+// Earlier when we were working with the constructor pattern
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+}
+
+Rectangle.prototype.draw = function () { // draw -> Method
+  console.log(this);
+  console.log('Drawing...');
+}
+
+let rect1 = new Rectangle(12, 15);
+rect1.draw();
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle {width: 12, height: 15}
+  height: 15
+  width: 12
+  -> __proto__: Object
+    -> draw: ƒ ()
+    -> constructor: ƒ Rectangle(width, height)
+    -> __proto__: Object */
+
+// expected output: (See the Chrome DevTools Console)    
+// Drawing...
+
+// Convert to class (class syntax in ES6)
+class Rectangle2 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  draw2() { // draw2 -> Method
+    console.log('Drawing 2...');
+  }
+}
+
+let rect2 = new Rectangle2(45, 23);
+console.log(rect2);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle2 {width: 45, height: 23}
+  height: 23
+  width: 4
+  -> __proto__: Object
+    -> constructor: ƒ Rectangle2(width, height)
+    -> draw2: ƒ draw2()
+    -> __proto__: Object */
+
+console.log(typeof Rectangle2)
+// expected output: (See the Chrome DevTools Console)
+// function
+
+// Without 'new' keyword
+/* class Rectangle3 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  draw3() { // draw3 -> Method
+    console.log('Drawing 3...');
+  }
+} */
+
+// Without 'new' keyword
+// let rect3 = Rectangle3(45, 23);
+// console.log(rect3);
+// expected output: (See the Chrome DevTools Console)
+// -> Uncaught TypeError: Cannot call a class as a function
