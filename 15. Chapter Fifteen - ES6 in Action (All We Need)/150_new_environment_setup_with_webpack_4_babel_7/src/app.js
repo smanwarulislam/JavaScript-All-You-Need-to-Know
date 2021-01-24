@@ -859,3 +859,191 @@ console.log(typeof Rectangle2)
 // console.log(rect3);
 // expected output: (See the Chrome DevTools Console)
 // -> Uncaught TypeError: Cannot call a class as a function
+
+// Chapter Fifteen
+// 161. ES6 Class Properties
+
+/* class Rectangle4 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  this.name = 'S M Anwarul Islam'; // this -> Error
+
+  draw4() { // draw4 -> Method
+    console.log('Drawing 4...');
+  }
+} */
+
+// let rect4 = new Rectangle4(45, 23);
+// console.log(rect4);
+// expected output: (See the Chrome DevTools Console)
+/* -> Uncaught Error: Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: G:\GitHub\repositories\JavaScript-All-You-Need-to-Know\15. Chapter Fifteen - ES6 in Action (All We Need)\150_new_environment_setup_with_webpack_4_babel_7\src\app.js: Unexpected token (872:6) */
+
+class Rectangle5 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  // This is how we can define a property in newer versions of JavaScript
+  name = 'S M Anwarul Islam'; // There is no syntax error | We have to install Plugins (class-properties)
+
+  draw5() { // draw5 -> Method
+    console.log('Drawing 5...');
+  }
+}
+
+// let rect5 = new Rectangle5(45, 23);
+// console.log(rect5);
+// expected output: (See the Chrome DevTools Console)
+/* -> Uncaught Error: Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: G:\GitHub\repositories\JavaScript-All-You-Need-to-Know\15. Chapter Fifteen - ES6 in Action (All We Need)\150_new_environment_setup_with_webpack_4_babel_7\src\app.js: Support for the experimental syntax 'classProperties' isn't currently enabled (891:8): */
+
+// This is an upcoming system
+// Babel (https://babeljs.io/)
+// Docs -> Plugins (Experimental -> class-properties)
+
+let rect5 = new Rectangle5(45, 23);
+console.log(rect5);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle5 {name: "S M Anwarul Islam", width: 45, height: 23}
+  height: 23
+  name: "S M Anwarul Islam"
+  width: 45
+  -> __proto__: Object
+    -> constructor: ƒ Rectangle5(width, height)
+    -> draw5: ƒ draw5()
+    -> __proto__: Object */
+
+class Rectangle6 {
+/*   constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  } */
+
+  // This is how we can define a property in newer versions of JavaScript
+  name2 = 'S M Anwarul Islam';
+
+  draw6() { // draw6 -> Method
+    console.log('Drawing 6...');
+  }
+}
+
+let rect6 = new Rectangle6(45, 23);
+console.log(rect6);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle6 {name2: "S M Anwarul Islam"}
+  name2: "S M Anwarul Islam"
+  -> __proto__: Object
+    -> constructor: ƒ Rectangle6()
+    -> draw6: ƒ draw6()
+    -> __proto__: Object */
+
+class Rectangle7 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  // This is how we can define a property in newer versions of JavaScript
+  name3 = 'S M Anwarul Islam';
+
+  draw7() { // draw7 -> Method
+    console.log('Drawing 7...');
+  }
+
+  test() { // test -> Method
+    
+  }
+}
+
+let rect7 = new Rectangle7(45, 23);
+console.log(rect7);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle7 {name3: "S M Anwarul Islam", width: 45, height: 23}
+  height: 23
+  name3: "S M Anwarul Islam"
+  width: 45
+  -> __proto__: Object
+    -> constructor: ƒ Rectangle7(width, height)
+    -> draw7: ƒ draw7()
+    -> test: ƒ test()
+    -> __proto__: Object */
+
+class Rectangle8 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+    this.another = function () { // another -> Method
+
+    }
+  }
+
+  // This is how we can define a property in newer versions of JavaScript
+  name4 = 'S M Anwarul Islam';
+
+  draw8() { // draw8 -> Method
+    console.log('Drawing 8...');
+  }
+
+  test2() { // test2 -> Method
+    
+  }
+}
+
+let rect8 = new Rectangle8(45, 23);
+console.log(rect8);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle8 {name4: "S M Anwarul Islam", width: 45, height: 23, another: ƒ}
+  -> another: ƒ ()
+     height: 23
+     name4: "S M Anwarul Islam"
+     width: 45
+     -> __proto__: Object
+       -> constructor: ƒ Rectangle8(width, height)
+       -> draw8: ƒ draw8()
+       -> test2: ƒ test2()
+       -> __proto__: Object */
+
+class Rectangle9 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+    this.another2 = function () { // another2 -> Method
+
+    }
+  }
+
+  // This is how we can define a property in newer versions of JavaScript
+  name5 = 'S M Anwarul Islam';
+
+  test4 = function () { // test4 -> Method
+    
+  }
+
+  draw9() { // draw9 -> Method
+    console.log('Drawing 9...');
+  }
+
+  test3() { // test3 -> Method
+    
+  }
+}
+
+let rect9 = new Rectangle9(45, 23);
+console.log(rect9);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle9 {name5: "S M Anwarul Islam", width: 45, height: 23, test4: ƒ, another2: ƒ}
+  -> another2: ƒ ()
+     height: 23
+     name5: "S M Anwarul Islam"
+  -> test4: ƒ ()
+     width: 45
+  -> __proto__: Object
+    -> constructor: ƒ Rectangle9(width, height)
+    -> draw9: ƒ draw9()
+    -> test3: ƒ test3()
+    -> __proto__: Object */
