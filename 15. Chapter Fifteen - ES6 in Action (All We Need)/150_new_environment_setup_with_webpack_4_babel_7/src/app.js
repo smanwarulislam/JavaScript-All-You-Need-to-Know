@@ -1033,7 +1033,7 @@ class Rectangle9 {
   }
 }
 
-let rect9 = new Rectangle9(45, 23);
+let rect9 = new Rectangle9(45, 23); // It is also called class instance | Object creation
 console.log(rect9);
 // expected output: (See the Chrome DevTools Console)
 /* -> Rectangle9 {name5: "S M Anwarul Islam", width: 45, height: 23, test4: ƒ, another2: ƒ}
@@ -1047,3 +1047,43 @@ console.log(rect9);
     -> draw9: ƒ draw9()
     -> test3: ƒ test3()
     -> __proto__: Object */
+
+// Chapter Fifteen
+// 162. ES6 Static Method
+
+class Person {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  print() { // Method
+    console.log(this.name, this.email);
+  }
+
+  static create(str2) { // static method
+    let person = JSON.parse(str2); // person -> Normal JavaScript object
+    return new Person(person.name, person.email); // Person -> Real object
+  }
+}
+
+let str2 = '{"name": "S M Anwarul Islam", "email": "engg.anwarbd@gmail.com"}'; // JSON string
+
+let p1 = Person.create(str2); // call
+console.log(p1);
+// expected output: (See the Chrome DevTools Console)
+/* -> Person {name: "S M Anwarul Islam", email: "engg.anwarbd@gmail.com"}
+  email: "engg.anwarbd@gmail.com"
+  name: "S M Anwarul Islam"
+  -> __proto__: Object
+    -> constructor: ƒ Person(name, email)
+    -> print: ƒ print()
+    -> __proto__: Object */
+
+console.log(p1 instanceof Person);
+// expected output: (See the Chrome DevTools Console)
+// true
+
+p1.print();
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam engg.anwarbd@gmail.com
