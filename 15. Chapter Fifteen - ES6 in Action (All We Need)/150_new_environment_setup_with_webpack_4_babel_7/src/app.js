@@ -1,3 +1,6 @@
+// If we will not use the 'use strict'; mode on top of the code
+// 'use strict';
+
 console.log('Hello ES6');
 console.log('Hello Webpack 5');
 console.log('Hello Babel 7');
@@ -1087,3 +1090,224 @@ console.log(p1 instanceof Person);
 p1.print();
 // expected output: (See the Chrome DevTools Console)
 // S M Anwarul Islam engg.anwarbd@gmail.com
+
+// Chapter Fifteen
+// 163. "this" Property and It's Value in ES6 Class
+
+// Creating new objects
+// Using the constructor function
+function Shape() {
+  this.draw = function () { // draw -> Method
+    console.log(this);
+  }
+}
+
+// Let's create the instance or object of the Shape
+let s1 = new Shape();
+s1.draw();
+// expected output: (See the Chrome DevTools Console)
+/* -> Shape {draw: ƒ}
+  -> draw: ƒ ()
+  -> __proto__: Object */
+
+let anotherDraw = s1.draw; // s1.draw -> Method | anotherDraw -> function
+anotherDraw();
+// expected output: (See the Chrome DevTools Console)
+// -> Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+// If we do not want to see the Window object
+// If we use the 'use strict'; mode on top of the code
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+// If we do not want to see the Window object
+// To use "use strict"; (or 'use strict';), which has been introduced since ES5
+
+// 'use strict';
+
+// Creating new objects
+// Using the constructor function
+function Shape2() {
+  this.draw2 = function () { // draw2 -> Method
+    console.log(this);
+  }
+}
+
+// Let's create the instance or object of the Shape
+/* let s2 = new Shape2();
+s2.draw2(); */
+// expected output: (See the Chrome DevTools Console)
+/* -> Shape2 {draw2: ƒ}
+  -> draw2: ƒ ()
+  -> __proto__: Object */
+
+/* let anotherDraw2 = s2.draw2; // s2.draw2 -> Method | anotherDraw2 -> function
+anotherDraw2(); */
+// expected output: (See the Chrome DevTools Console)
+// -> Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+// If we use the 'use strict'; mode on top of the code
+
+// Let's create the instance or object of the Shape
+let s2 = new Shape2();
+s2.draw2();
+// expected output: (See the Chrome DevTools Console)
+/* -> Shape2 {draw2: ƒ}
+  -> draw2: ƒ ()
+  -> __proto__: Object */
+
+let anotherDraw2 = s2.draw2; // s2.draw2 -> Method | anotherDraw2 -> function
+anotherDraw2();
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+// If we will not use the 'use strict'; mode on top of the code
+
+class Person2 {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  print2() { // Method
+    console.log(this.name, this.email);
+  }
+
+  test5() { // Method
+    console.log(this);
+  }
+
+  static create2(str3) { // static method
+    let person2 = JSON.parse(str3); // person2 -> Normal JavaScript object
+    return new Person2(person2.name, person2.email); // Person2 -> Real object
+  }
+}
+
+let str3 = '{"name": "S M Anwarul Islam", "email": "engg.anwarbd@gmail.com"}'; // JSON string
+
+let p2 = Person2.create2(str3); // call
+console.log(p2);
+// expected output: (See the Chrome DevTools Console)
+/* -> Person2 {name: "S M Anwarul Islam", email: "engg.anwarbd@gmail.com"}
+  email: "engg.anwarbd@gmail.com"
+  name: "S M Anwarul Islam"
+  -> __proto__: Object
+    -> constructor: ƒ Person2(name, email)
+    -> print2: ƒ print2()
+    -> test5: ƒ test5()
+    -> __proto__: Object */
+
+console.log(p2 instanceof Person2);
+// expected output: (See the Chrome DevTools Console)
+// true
+
+p2.print2();
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam engg.anwarbd@gmail.com
+
+let test5This = p2.test5; // p2.test5 -> Method | test5This -> function
+test5This(); // test5This() -> Calling in function form
+// expected output: (See the Chrome DevTools Console)
+// -> Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+// Note:
+// Why are we getting Window objects here?
+// class is compiled in strict mode by default
+// But It's not going to be in the strict mode because of the Webpack, Babel we've configured
+// 'use strict' mode is automatically used inside the class
+
+// But in the case of class, it is not supposed to be a Window object
+// Let's take a look at this code in Google Chrome browser's DevTools Console:
+
+// If we will not use the 'use strict'; mode on top of the code
+
+/* class Person2 {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  print2() { // Method
+    console.log(this.name, this.email);
+  }
+
+  test5() { // Method
+    console.log(this);
+  }
+
+  static create2(str3) { // static method
+    let person2 = JSON.parse(str3); // person2 -> Normal JavaScript object
+    return new Person2(person2.name, person2.email); // Person2 -> Real object
+  }
+}
+
+let str3 = '{"name": "S M Anwarul Islam", "email": "engg.anwarbd@gmail.com"}'; // JSON string */
+
+/* let p2 = Person2.create2(str3); // call
+console.log(p2); */
+// expected output: (See the Chrome DevTools Console)
+/* -> Person2 {name: "S M Anwarul Islam", email: "engg.anwarbd@gmail.com"}
+  email: "engg.anwarbd@gmail.com"
+  name: "S M Anwarul Islam"
+  -> __proto__: Object
+    -> constructor: class Person2
+    -> print2: ƒ print2()
+    -> test5: ƒ test5()
+    -> __proto__: Object */
+
+/* let test5This = p2.test5; // p2.test5 -> Method | test5This -> function    
+test5This(); // test5This() -> Calling in function form */
+// expected output: (See the Chrome DevTools Console)
+// undefined
+
+// Our setup will support if we install a plugin
+// 'use strict' mode will be used if we install a plugin
+// Babel (https://babeljs.io/)
+// @babel/plugin-transform-strict-mode (https://babeljs.io/docs/en/babel-plugin-transform-strict-mode)
+
+class Person3 {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  print3() { // Method
+    console.log(this.name, this.email);
+  }
+
+  test6() { // Method
+    console.log(this);
+  }
+
+  static create3(str4) { // static method
+    let person3 = JSON.parse(str4); // person3 -> Normal JavaScript object
+    return new Person3(person3.name, person3.email); // Person3 -> Real object
+  }
+}
+
+let str4 = '{"name": "S M Anwarul Islam", "email": "engg.anwarbd@gmail.com"}'; // JSON string
+
+let p3 = Person3.create3(str4); // call
+console.log(p3);
+// expected output: (See the Chrome DevTools Console)
+/* -> Person3 {name: "S M Anwarul Islam", email: "engg.anwarbd@gmail.com"}
+  email: "engg.anwarbd@gmail.com"
+  name: "S M Anwarul Islam"
+  -> __proto__: Object
+    -> constructor: ƒ Person3(name, email)
+    -> print3: ƒ print3()
+    -> test6: ƒ test6()
+    -> __proto__: Object */
+
+console.log(p3 instanceof Person3);
+// expected output: (See the Chrome DevTools Console)
+// true
+
+p3.print3();
+// expected output: (See the Chrome DevTools Console)
+// S M Anwarul Islam engg.anwarbd@gmail.com
+
+let test6This = p3.test6; // p3.test6 -> Method | test6This -> function
+test6This(); // test6This() -> Calling in function form
+// expected output: (See the Chrome DevTools Console)
+// undefined
