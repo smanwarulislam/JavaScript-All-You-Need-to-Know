@@ -1463,3 +1463,113 @@ console.log(c4);
 
 // Almost everything has become private
 // c4.;
+
+// Chapter Fifteen
+// 165. Hide Private Properties with WeakMap
+
+// To make the property private
+const _radius5 = new WeakMap(); // _radius5 defined by WeakMap
+const _name3 = new WeakMap(); // _name3 defined by WeakMap
+
+class Circle5 {
+  constructor(radius5, name3) {
+    _radius5.set(this, radius5); // radius5 -> Property
+    _name3.set(this, name3); // name3 -> Property
+  }
+
+  draw5() { // Method
+    console.log('Drawing 14...');
+    console.log(_radius5.get(this), _name3.get(this));
+  }
+}
+
+let c5 = new Circle5(2, 'CRED');
+c5.draw5();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 14...
+
+// expected output: (See the Chrome DevTools Console)
+// 2 "CRED"
+
+// To make the property private
+const _radius6 = new WeakMap(); // _radius6 defined by WeakMap
+const _name4 = new WeakMap(); // _name4 defined by WeakMap
+// To make the method private
+const _resize = new WeakMap()
+
+class Circle6 {
+  constructor(radius6, name4) {
+    this.size = 100;
+    _radius6.set(this, radius6); // radius6 -> Property
+    _name4.set(this, name4); // name4 -> Property
+    // Method
+    _resize.set(this, () => { // Defined with an arrow function
+      console.log(this.size);
+    })
+  }
+
+  draw6() { // Method
+    console.log('Drawing 15...');
+    console.log(_radius6.get(this), _name4.get(this));
+    _resize.get(this)(); // () -> Since it is a function, it must be called
+  }
+}
+
+let c6 = new Circle6(2, 'CRED');
+c6.draw6();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 15...
+
+// expected output: (See the Chrome DevTools Console)
+// 2 "CRED"
+
+// expected output: (See the Chrome DevTools Console)
+// 100
+
+// If the method was defined by a normal function without an arrow function
+
+// To make the property private
+const _radius7 = new WeakMap(); // _radius7 defined by WeakMap
+const _name5 = new WeakMap(); // _name5 defined by WeakMap
+// To make the method private
+const _resize2 = new WeakMap()
+
+class Circle7 {
+  constructor(radius7, name5) {
+    this.size2 = 100;
+    _radius7.set(this, radius7); // radius7 -> Property
+    _name5.set(this, name5); // name5 -> Property
+    // Method
+    /* _resize2.set(this, function () { // Defined with normal function
+      console.log(this.size2);
+    }) */
+    // This is why need to use the arrow function for the solution
+    // This means that the arrow function has to be used where 'this' of the parent has
+    _resize2.set(this, () => { // Defined with an arrow function
+      console.log(this.size2);
+    })
+  }
+
+  draw7() { // Method
+    console.log('Drawing 16...');
+    console.log(_radius7.get(this), _name5.get(this));
+    _resize2.get(this)(); // () -> Since it is a function, it must be called
+  }
+}
+
+let c7 = new Circle7(2, 'CRED');
+c7.draw7();
+// Defined with normal function
+// expected output: (See the Chrome DevTools Console)
+/* -> Uncaught TypeError: Cannot read property 'size2' of undefined
+at app.js:1544 */
+
+// Defined with an arrow function
+// expected output: (See the Chrome DevTools Console)
+// Drawing 16...
+
+// expected output: (See the Chrome DevTools Console)
+// 2 "CRED"
+
+// expected output: (See the Chrome DevTools Console)
+// 100
