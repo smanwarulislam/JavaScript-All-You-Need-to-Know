@@ -1311,3 +1311,155 @@ let test6This = p3.test6; // p3.test6 -> Method | test6This -> function
 test6This(); // test6This() -> Calling in function form
 // expected output: (See the Chrome DevTools Console)
 // undefined
+
+// Chapter Fifteen
+// 164. Hide Private Data with Symbol
+
+class Circle {
+  constructor(radius) {
+    this.radius = radius; // radius -> Property
+    // This way is not a real solution
+    // this._radius = radius;
+  }
+
+  draw() { // Method
+    console.log('Drawing 10...');
+  }
+}
+
+let c1 = new Circle(2);
+
+// Accessible
+// c1.radius;
+// c1.draw;
+// c1._radius;
+
+console.log(c1);
+// expected output: (See the Chrome DevTools Console)
+/* -> Circle {radius: 2}
+  radius: 2
+  -> __proto__: Object
+    -> constructor: ƒ Circle(radius)
+    -> draw: ƒ draw()
+    -> __proto__: Object */
+
+c1.draw();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 10...
+
+// Symbol
+/* What does the Symbol do?
+The Symbol is a unique identifier */
+
+// To make the property private
+const _radius2 = Symbol();
+class Circle2 {
+  constructor(radius2) {
+    this[_radius2] = radius2; // radius2 -> Property | Representation to radius2 by array notation
+  }
+
+  draw2() { // Method
+    console.log('Drawing 11...');
+  }
+}
+
+let c2 = new Circle2(2);
+
+// There was no radius2 property. Almost became hidden
+// c2.;
+
+console.log(c2);
+// expected output: (See the Chrome DevTools Console)
+/* -> Circle2 {Symbol(): 2}
+  Symbol(): 2
+  -> __proto__: Object
+    -> constructor: ƒ Circle2(radius2)
+    -> draw2: ƒ draw2()
+    -> __proto__: Object */
+
+// To make the property private
+const _radius3 = Symbol();
+const _name = Symbol();
+class Circle3 {
+  constructor(radius3, name) {
+    this[_radius3] = radius3; // radius3 -> Property | Representation to radius3 by array notation
+    this[_name] = name; // name -> Property | Representation to name by array notation
+  }
+
+  draw3() { // Method
+    console.log('Drawing 12...');
+  }
+}
+
+let c3 = new Circle3(2, 'CRED');
+console.log(c3);
+// expected output: (See the Chrome DevTools Console)
+/* -> Circle3 {Symbol(): 2, Symbol(): "CRED"}
+  Symbol(): 2
+  Symbol(): "CRED"
+  -> __proto__: Object
+    -> constructor: ƒ Circle3(radius3, name)
+    -> draw3: ƒ draw3()
+    -> __proto__: Object */
+
+// There is no opportunity to take access from outside (radius3, name) | Became hidden/private
+// console.log(c3.);
+
+// Even then it is possible to take access
+console.log(Object.getOwnPropertyNames(c3));
+// expected output: (See the Chrome DevTools Console)
+/* -> []
+  length: 0
+  -> __proto__: Array(0) */
+
+console.log(Object.getOwnPropertySymbols(c3));
+// expected output: (See the Chrome DevTools Console)
+/* -> (2) [Symbol(), Symbol()]
+  0: Symbol()
+  1: Symbol()
+  length: 2
+  -> __proto__: Array(0) */
+
+console.log(Object.getOwnPropertySymbols(c3)[0]);
+// expected output: (See the Chrome DevTools Console)
+// Symbol()
+
+let key = Object.getOwnPropertySymbols(c3)[0];
+console.log(c3[key]);
+// expected output: (See the Chrome DevTools Console) | Output of radius3
+// 2
+
+let key2 = Object.getOwnPropertySymbols(c3)[1];
+console.log(c3[key2]);
+// expected output: (See the Chrome DevTools Console) | Output of name
+// CRED
+
+// To make the property private
+const _radius4 = Symbol();
+const _name2 = Symbol();
+// To make the method private
+const _draw4 = Symbol();
+class Circle4 {
+  constructor(radius4, name2) {
+    this[_radius4] = radius4; // radius4 -> Property | Representation to radius4 by array notation
+    this[_name2] = name2; // name2 -> Property | Representation to name2 by array notation
+  }
+
+  [_draw4]() { // Method
+    console.log('Drawing 13...');
+  }
+}
+
+let c4 = new Circle4(2, 'CRED');
+console.log(c4);
+// expected output: (See the Chrome DevTools Console)
+/* -> Circle4 {Symbol(): 2, Symbol(): "CRED"}
+  Symbol(): 2
+  Symbol(): "CRED"
+  -> __proto__: Object
+    -> constructor: ƒ Circle4(radius4, name2)
+    -> Symbol(): ƒ value()
+    -> __proto__: Object */
+
+// Almost everything has become private
+// c4.;
