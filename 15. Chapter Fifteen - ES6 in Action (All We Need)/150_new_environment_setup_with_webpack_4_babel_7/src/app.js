@@ -1573,3 +1573,130 @@ at app.js:1544 */
 
 // expected output: (See the Chrome DevTools Console)
 // 100
+
+// Chapter Fifteen
+// 166. ES6 Getter and Setter
+
+// Any kind of private property to get, set
+
+// ES6 Getter
+// To make the property private
+const _radius8 = new WeakMap(); // _radius8 defined by WeakMap
+const _name6 = new WeakMap(); // _name6 defined by WeakMap
+// To make the method private
+const _resize3 = new WeakMap()
+
+class Circle8 {
+  constructor(radius8, name6) {
+    this.size3 = 100;
+    _radius8.set(this, radius8); // radius8 -> Property
+    _name6.set(this, name6); // name6 -> Property
+    // Method
+    // This is why need to use the arrow function for the solution
+    // This means that the arrow function has to be used where 'this' of the parent has
+    _resize3.set(this, () => { // Defined with an arrow function
+      console.log(this.size3);
+    })
+  }
+
+  /* getRadius() { // Method
+    return _radius8.get(this);
+  } */
+
+  // ES6 Getter (Now getRadius method is no longer needed)
+  get radius8() { // get -> Keyword | radius8 -> Method
+    return _radius8.get(this);
+  }
+
+  draw8() { // Method
+    console.log('Drawing 17...');
+    console.log(_radius8.get(this), _name6.get(this));
+    _resize3.get(this)(); // () -> Since it is a function, it must be called
+  }
+}
+
+let c8 = new Circle8(2, 'CRED');
+c8.draw8();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 17...
+
+// expected output: (See the Chrome DevTools Console)
+// 2 "CRED"
+
+// expected output: (See the Chrome DevTools Console)
+// 100
+
+// Calling the getRadius method
+// console.log(c8.getRadius());
+// expected output: (See the Chrome DevTools Console)
+// 2
+
+// Now getRadius method is no longer needed
+console.log(c8.radius8);
+// expected output: (See the Chrome DevTools Console)
+// 2
+
+// ES6 Setter
+// To make the property private
+const _radius9 = new WeakMap(); // _radius9 defined by WeakMap
+const _name7 = new WeakMap(); // _name7 defined by WeakMap
+// To make the method private
+const _resize4 = new WeakMap()
+
+class Circle9 {
+  constructor(radius9, name7) {
+    this.size4 = 100;
+    _radius9.set(this, radius9); // radius9 -> Property
+    _name7.set(this, name7); // name7 -> Property
+    // Method
+    // This is why need to use the arrow function for the solution
+    // This means that the arrow function has to be used where 'this' of the parent has
+    _resize4.set(this, () => { // Defined with an arrow function
+      console.log(this.size4);
+    })
+  }
+
+  /* getRadius2() { // Method
+    return _radius9.get(this);
+  } */
+
+  // ES6 Getter (Now getRadius2 method is no longer needed)
+  get radius9() { // get -> Keyword | radius9 -> Method
+    return _radius9.get(this);
+  }
+
+  // ES6 Setter
+  set radius9(v) { // v -> New value
+    _radius9.set(this, v) // v -> New value provided
+  }
+
+  draw9() { // Method
+    console.log('Drawing 18...');
+    console.log(_radius9.get(this), _name7.get(this));
+    _resize4.get(this)(); // () -> Since it is a function, it must be called
+  }
+}
+
+let c9 = new Circle9(2, 'CRED');
+c9.draw9();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 18...
+
+// expected output: (See the Chrome DevTools Console)
+// 2 "CRED"
+
+// expected output: (See the Chrome DevTools Console)
+// 100
+
+// Calling the getRadius2 method
+// console.log(c9.getRadius2());
+// expected output: (See the Chrome DevTools Console)
+// 2
+
+// Setting a new radius
+c9.radius9 = 110;
+
+// Now getRadius2 method is no longer needed
+console.log(c9.radius9);
+// expected output: (See the Chrome DevTools Console)
+// 110
