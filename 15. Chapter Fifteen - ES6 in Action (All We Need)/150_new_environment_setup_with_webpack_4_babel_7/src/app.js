@@ -1782,7 +1782,7 @@ class Shape5 {
 class Rectangle12 extends Shape5 {
   constructor(color, width, height) { // If you want to inherit color, you have to provide color
     // Note:
-    /* If the constructor is called in the child class (Rectangle11), the super (super()) must be called otherwise it will give an error. */
+    /* If the constructor is called in the child class (Rectangle12), the super (super()) must be called otherwise it will give an error. */
     // There is basically a super (super()) to call the parent class (Shape5) constructor
     super(color); // Providing the color property inside the super (super())
     this.width = width;
@@ -1812,3 +1812,58 @@ console.log(rect12);
 rect12.draw();
 // expected output: (See the Chrome DevTools Console)
 // Drawing 21...
+
+// Chapter Fifteen
+// 168. Method Overriding in ES6
+
+// Now what if the Shape6 (parent class) class also has a constructor
+class Shape6 {
+  constructor(color) { // color -> New property
+    this.color = color;
+  }
+
+  draw() { // Method
+    console.log('Drawing 22...');
+  }
+}
+
+// Now the Rectangle13 class will inherit the Shape6 (parent class) class
+class Rectangle13 extends Shape6 {
+  constructor(color, width, height) { // If you want to inherit color, you have to provide color
+    // Note:
+    /* If the constructor is called in the child class (Rectangle13), the super (super()) must be called otherwise it will give an error. */
+    // There is basically a super (super()) to call the parent class (Shape6) constructor
+    super(color); // Providing the color property inside the super (super())
+    this.width = width;
+    this.height = height;
+  }
+
+  // Method overriding
+  draw() {
+    console.log('Drawing a Rectangle 23...')
+  }
+
+  calculate() { // Method
+    return this.width * this.height;
+  }
+}
+
+let rect13 = new Rectangle13('Green', 4, 5);
+console.log(rect13);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle13 {color: "Green", width: 4, height: 5}
+  color: "Green"
+  height: 5
+  width: 4
+  -> __proto__: Shape6
+    -> calculate: ƒ calculate()
+    -> constructor: ƒ Rectangle13(color, width, height)
+    -> draw: ƒ draw()
+    -> __proto__: Object
+      -> constructor: ƒ Shape6(color)
+      -> draw: ƒ draw()
+      -> __proto__: Object */
+
+rect13.draw();
+// expected output: (See the Chrome DevTools Console)
+// Drawing a Rectangle 23...
