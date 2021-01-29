@@ -1700,3 +1700,115 @@ c9.radius9 = 110;
 console.log(c9.radius9);
 // expected output: (See the Chrome DevTools Console)
 // 110
+
+// Chapter Fifteen
+// 167. Inheritance in ES6
+
+class Shape3 {
+  draw() { // Method
+    console.log('Drawing 19...');
+  }
+}
+
+// Now the Rectangle10 class will inherit the Shape3 (parent class) class
+class Rectangle10 extends Shape3 {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  calculate() { // Method
+    return this.width * this.height;
+  }
+}
+
+/* let rect10 = new Rectangle10(4, 5);
+console.log(rect10); */
+// expected output: (See the Chrome DevTools Console)
+/* -> Uncaught TypeError: Cannot set property 'width' of undefined
+at new Rectangle10 (app.js:1716) */
+
+class Shape4 {
+  draw() { // Method
+    console.log('Drawing 20...');
+  }
+}
+
+// Now the Rectangle11 class will inherit the Shape4 (parent class) class
+class Rectangle11 extends Shape4 {
+  constructor(width, height) {
+    /* Note:
+    If the constructor is called in the child class (Rectangle11), the super (super()) must be called otherwise it will give an error. */
+    super();
+    this.width = width;
+    this.height = height;
+  }
+
+  calculate() { // Method
+    return this.width * this.height;
+  }
+}
+
+let rect11 = new Rectangle11(4, 5);
+console.log(rect11);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle11 {width: 4, height: 5}
+  height: 5
+  width: 4
+  -> __proto__: Shape4
+    -> calculate: ƒ calculate()
+    -> constructor: ƒ Rectangle11(width, height)
+    -> __proto__: Object
+      -> constructor: ƒ Shape4()
+      -> draw: ƒ draw()
+      -> __proto__: Object */
+
+rect11.draw();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 20...
+
+// Now what if the Shape5 (parent class) class also has a constructor
+class Shape5 {
+  constructor(color) { // color -> New property
+    this.color = color;
+  }
+
+  draw() { // Method
+    console.log('Drawing 21...');
+  }
+}
+
+// Now the Rectangle12 class will inherit the Shape5 (parent class) class
+class Rectangle12 extends Shape5 {
+  constructor(color, width, height) { // If you want to inherit color, you have to provide color
+    // Note:
+    /* If the constructor is called in the child class (Rectangle11), the super (super()) must be called otherwise it will give an error. */
+    // There is basically a super (super()) to call the parent class (Shape5) constructor
+    super(color); // Providing the color property inside the super (super())
+    this.width = width;
+    this.height = height;
+  }
+
+  calculate() { // Method
+    return this.width * this.height;
+  }
+}
+
+let rect12 = new Rectangle12('Green', 4, 5);
+console.log(rect12);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle12 {color: "Green", width: 4, height: 5}
+  color: "Green"
+  height: 5
+  width: 4
+  -> __proto__: Shape5
+    -> calculate: ƒ calculate()
+    -> constructor: ƒ Rectangle12(color, width, height)
+    -> __proto__: Object
+      -> constructor: ƒ Shape5(color)
+      -> draw: ƒ draw()
+      -> __proto__: Object */
+
+rect12.draw();
+// expected output: (See the Chrome DevTools Console)
+// Drawing 21...
