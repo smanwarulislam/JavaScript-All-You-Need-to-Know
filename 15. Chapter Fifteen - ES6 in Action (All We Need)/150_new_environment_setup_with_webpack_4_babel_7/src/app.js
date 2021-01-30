@@ -1867,3 +1867,122 @@ console.log(rect13);
 rect13.draw();
 // expected output: (See the Chrome DevTools Console)
 // Drawing a Rectangle 23...
+
+// Chapter Fifteen
+// 169. ES6 Module System Explained
+
+// Now what if the Shape7 (parent class) class also has a constructor
+/* class Shape7 {
+  constructor(color) { // color -> New property
+    this.color = color;
+  }
+
+  draw() { // Method
+    console.log('Drawing 23...');
+  }
+} */
+
+// Now the Rectangle14 class will inherit the Shape7 (parent class) class
+/* class Rectangle14 extends Shape7 {
+  constructor(color, width, height) { // If you want to inherit color, you have to provide color
+    // Note:
+    // If the constructor is called in the child class (Rectangle14), the super (super()) must be called otherwise it will give an error.
+    // There is basically a super (super()) to call the parent class (Shape7) constructor
+    super(color); // Providing the color property inside the super (super())
+    this.width = width;
+    this.height = height;
+  }
+
+  // Method overriding
+  draw() {
+    console.log('Drawing a Rectangle 24...')
+  }
+
+  calculate() { // Method
+    return this.width * this.height;
+  }
+} */
+
+/* let rect14 = new Rectangle14('Green', 4, 5);
+console.log(rect14); */
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle14 {color: "Green", width: 4, height: 5}
+  color: "Green"
+  height: 5
+  width: 4
+  -> __proto__: Shape7
+    -> calculate: ƒ calculate()
+    -> constructor: ƒ Rectangle14(color, width, height)
+    -> draw: ƒ draw()
+    -> __proto__: Object
+      -> constructor: ƒ Shape7(color)
+      -> draw: ƒ draw()
+      -> __proto__: Object */
+
+// rect14.draw();
+// expected output: (See the Chrome DevTools Console)
+// Drawing a Rectangle 24...
+
+// ES6 module system
+
+// To call Rectangle14 from any other file
+import Rectangle14 from './Rectangle14'; // File path: './Rectangle14' or './Rectangle14.js'
+
+let rect14 = new Rectangle14('Green', 4, 5);
+console.log(rect14);
+// expected output: (See the Chrome DevTools Console)
+/* -> Rectangle14 {color: "Green", width: 4, height: 5}
+  color: "Green"
+  height: 5
+  width: 4
+  -> __proto__: Shape7
+    -> calculate: ƒ calculate()
+    -> constructor: ƒ Rectangle14(color, width, height)
+    -> draw: ƒ draw()
+    -> __proto__: Object
+      -> constructor: ƒ Shape7(color)
+      -> draw: ƒ draw()
+      -> __proto__: Object */
+
+rect14.draw();
+// expected output: (See the Chrome DevTools Console)
+// Drawing a Rectangle 24...
+
+// To import everything
+// File path: './func' or './func.js' | * -> alias | import * -> Everything | 'as' mean what's the name of it? -> Here 'func'
+import * as func from './func';
+
+console.log(func);
+// expected output: (See the Chrome DevTools Console)
+/* -> Module {__esModule: true, …}
+  add: (...)
+  div: (...)
+  sub: (...)
+  times: (...) */
+
+console.log(func.add(45, 10));
+// expected output: (See the Chrome DevTools Console)
+// 55
+
+console.log(func.sub(45, 10));
+// expected output: (See the Chrome DevTools Console)
+// 35
+
+console.log(func.times(45, 10));
+// expected output: (See the Chrome DevTools Console)
+// 450
+
+console.log(func.div(45, 10));
+// expected output: (See the Chrome DevTools Console)
+// 4.5
+
+// Only for the add and div functions import
+import { add, div } from './func'; // File path: './func' or './func.js' | { add, div } -> To destructure
+
+console.log(add(45, 10));
+// expected output: (See the Chrome DevTools Console)
+// 55
+
+console.log(div(45, 10));
+// expected output: (See the Chrome DevTools Console)
+// 4.5
