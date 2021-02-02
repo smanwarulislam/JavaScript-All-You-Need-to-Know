@@ -206,3 +206,102 @@ let result6 = changeToInt6('85.96');
 console.log(result6);
 // expected output: (See the Chrome DevTools Console)
 // 85
+
+// Chapter Sixteen
+// 172. Error Handling with Try Catch Block [Runtime Errors]
+
+function makeWords(text) {
+  let str = text.trim();
+  let words = str.split(' ');
+
+  return words;
+}
+
+let words = makeWords('      I am S M Anwarul Islam      ');
+console.log(words);
+// expected output: (See the Chrome DevTools Console)
+// -> (6) ["I", "am", "S", "M", "Anwarul", "Islam"]
+
+function makeWords2(text2) {
+  let str2 = text2.trim();
+  let words2 = str2.split(' ');
+
+  return words2;
+}
+
+/* let words2 = makeWords2(86);
+console.log(words2); */
+// expected output: (See the Chrome DevTools Console)
+/* -> Uncaught TypeError: text2.trim is not a function
+at makeWords2 (app.js:226)
+at Object../src/app.js (app.js:232) */
+
+// We will not be able to handle this error properly with if...else statement. We need something else.
+// How will we handle any issue provided by the user?
+// The easiest solution to handle this type of situation is the try-catch block
+
+function makeWords3(text3) {
+  try {
+    let str3 = text3.trim();
+    let words3 = str3.split(' ');
+
+    return words3;
+  } catch (e) {
+    // console.log(e); // e -> Error object
+    // console.dir(e);
+    // console.log(e.message); // Custom handled error message
+    console.log('Please provide a valid text');
+  }
+}
+
+let words3 = makeWords3(86);
+console.log(words3);
+// expected output: (See the Chrome DevTools Console) | app.js:255
+// undefined
+
+// For console.log(e)
+// expected output: (See the Chrome DevTools Console)
+// This time the error was not shown in red color. Showed the error differently.
+/* TypeError: text3.trim is not a function | app.js:250
+at makeWords3 (app.js:245)
+at Object../src/app.js (app.js:254) */
+
+// For console.dir(e)
+// expected output: (See the Chrome DevTools Console)
+/* TypeError: text3.trim is not a function | app.js:251
+->
+at makeWords3 (http://localhost:9000/bundle.js:9543:22)
+at Object../src/app.js (http://localhost:9000/bundle.js:9554:14)
+at __webpack_require__ (http://localhost:9000/bundle.js:20081:32)
+at http://localhost:9000/bundle.js:21064:11
+at http://localhost:9000/bundle.js:21067:12
+->
+message: "text3.trim is not a function"
+stack: "TypeError: text3.trim is not a function↵
+-> __proto__: Error
+  -> constructor: ƒ TypeError()
+     message: ""
+     name: "TypeError"
+  -> __proto__: Object
+    -> constructor: ƒ Error()
+       message: ""
+       name: "Error"
+    -> toString: ƒ toString()       
+    -> __proto__: Object */
+
+// expected output: (See the Chrome DevTools Console) | app.js:256
+// undefined
+
+// For console.log(e.message)
+// expected output: (See the Chrome DevTools Console)
+// text3.trim is not a function | app.js:252
+
+// expected output: (See the Chrome DevTools Console) | app.js:257
+// undefined
+
+// For console.log('Please provide a valid text')
+// expected output: (See the Chrome DevTools Console)
+// Please provide a valid text | app.js:253
+
+// expected output: (See the Chrome DevTools Console) | app.js:258
+// undefined
