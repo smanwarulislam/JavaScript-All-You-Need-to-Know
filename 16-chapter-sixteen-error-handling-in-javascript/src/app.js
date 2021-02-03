@@ -305,3 +305,32 @@ stack: "TypeError: text3.trim is not a function↵
 
 // expected output: (See the Chrome DevTools Console) | app.js:258
 // undefined
+
+// Chapter Sixteen
+// 173. How to Throw an Error in Javascript
+
+try {
+  console.log('I am Line 1');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch (e) { // e -> Error e object
+  console.log(e.message);
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* I am Line 1
+I am Line 2
+I am Line 3 */
+
+try {
+  console.log('I am Line 1');
+  throw new Error('I am Your Error');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch (e) { // e -> Error e object
+  console.log(e.message);
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* I am Line 1
+I am Your Error */
