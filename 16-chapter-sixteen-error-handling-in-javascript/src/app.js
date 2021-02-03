@@ -370,3 +370,39 @@ try {
 I am Line 2
 I am Line 3
 I am Finally Block 2 */
+
+// Chapter Sixteen
+// 175. Optional Catch Binding in ESNext
+
+try {
+  console.log('I am Line 1');
+  // throw new Error('I am Your Error 4');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch {
+  console.log(e.message);
+} finally {
+  console.log('I am Finally Block 3');
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* I am Line 1
+I am Line 2
+I am Line 3
+I am Finally Block 3 */
+
+try {
+  console.log('I am Line 1');
+  throw new Error('I am Your Error 5');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch {
+  console.log('This is a custom error message');
+} finally {
+  console.log('I am Finally Block 4');
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* I am Line 1
+This is a custom error message
+I am Finally Block 4 */
