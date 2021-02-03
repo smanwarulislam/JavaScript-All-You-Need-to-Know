@@ -406,3 +406,79 @@ try {
 /* I am Line 1
 This is a custom error message
 I am Finally Block 4 */
+
+// Chapter Sixteen
+// 176. How to Create a Custom Error in ES6
+
+// Error -> Since this is a class and it's ES6, we can extend it very easily.
+// Creating your own error object by extending a built-in error object
+// We are now going to create a custom error...
+class CustomError extends Error {
+  constructor(msg) {
+    super(msg)
+
+    // Note:
+    // The reason for checking this condition is that this system will only work in the case of the V8 engine.
+    if (Error.captureStackTrace) { // Error.captureStackTrace -> It will detect where exactly the error is.
+      Error.captureStackTrace(this, CustomError);
+    }
+  }
+}
+
+try {
+  console.log('I am Line 1');
+  // throw new Error('I am Your Error 6'); // throw new Error -> This error is not specific at all. Just abstract error.
+  throw new CustomError('I am Your Error 6');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch (e) { // e -> Error e object | e -> As if the error can be caught
+  // console.log(e);
+  // console.log(e.message);
+  console.dir(e); // To see the definition of the whole object (e)
+  console.log('This is a custom error message 2');
+} finally {
+  console.log('I am Finally Block 5');
+}
+
+// For console.log(e)
+// expected output: (See the Chrome DevTools Console)
+// I am Line 1 | app.js:429
+// This time the error was not shown in red color. Showed the error differently.
+/* Error: I am Your Error 6 | app.js:435
+at Object../src/app.js (app.js:431)
+at __webpack_require__ (bootstrap:21) */
+// This is a custom error message 2 | app.js:438
+// I am Finally Block 5 | app.js:440
+
+// For console.log(e.message)
+// expected output: (See the Chrome DevTools Console)
+// I am Line 1 | app.js:429
+// I am Your Error 6 | app.js:436
+// This is a custom error message 2 | app.js:438
+// I am Finally Block 5 | app.js:440
+
+// For console.dir(e)
+// expected output: (See the Chrome DevTools Console)
+// I am Line 1 | app.js:429
+/* Error: I am Your Error 6 | app.js:437
+->
+at Object../src/app.js (http://localhost:9000/bundle.js:9760:9)
+at __webpack_require__ (http://localhost:9000/bundle.js:20330:32)
+at http://localhost:9000/bundle.js:21313:11
+at http://localhost:9000/bundle.js:21316:12
+->
+message: "I am Your Error 6"
+stack: "Error: I am Your Error 6↵
+-> __proto__: Wrapper
+  -> constructor: ƒ CustomError(msg)
+  -> __proto__: Error
+    -> constructor: ƒ Wrapper()
+    -> __proto__: Object
+      -> constructor: ƒ Error()
+         message: ""
+         name: "Error"
+         -> toString: ƒ toString()
+         -> __proto__: Object */
+
+// This is a custom error message 2 | app.js:438
+// I am Finally Block 5 | app.js:440
