@@ -334,3 +334,39 @@ try {
 // expected output: (See the Chrome DevTools Console)
 /* I am Line 1
 I am Your Error */
+
+// Chapter Sixteen
+// 174. Optional Finally Block in Javascript
+
+try {
+  console.log('I am Line 1');
+  throw new Error('I am Your Error 2');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch (e) { // e -> Error e object
+  console.log(e.message);
+} finally {
+  console.log('I am Finally Block');
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* I am Line 1
+I am Your Error 2
+I am Finally Block */
+
+try {
+  console.log('I am Line 1');
+  // throw new Error('I am Your Error 3');
+  console.log('I am Line 2');
+  console.log('I am Line 3');
+} catch (e) { // e -> Error e object
+  console.log(e.message);
+} finally {
+  console.log('I am Finally Block 2');
+}
+
+// expected output: (See the Chrome DevTools Console)
+/* I am Line 1
+I am Line 2
+I am Line 3
+I am Finally Block 2 */
