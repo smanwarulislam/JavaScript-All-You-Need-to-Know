@@ -313,7 +313,7 @@ getRequest('https://jsonplaceholder.typicode.com/users', (err, res) => {
   } else {
     console.log(res);
     // Just to take the name
-    res.forEach(r => alert(r.name));
+    // res.forEach(r => alert(r.name));
   }
 });
 // expected output: (See the Chrome DevTools Console) | 10 users
