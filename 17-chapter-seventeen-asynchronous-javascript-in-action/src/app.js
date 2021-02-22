@@ -29,3 +29,5 @@ import './lessons/lesson14';
 import './lessons/lesson15';
 
 import './lessons/lesson16';
+
+import './lessons/lesson17';
