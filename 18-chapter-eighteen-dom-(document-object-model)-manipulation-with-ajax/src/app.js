@@ -10,4 +10,6 @@
 
 // import './lessons/lesson6';
 
-import './lessons/lesson7';
+// import './lessons/lesson7';
+
+import './lessons/lesson8';
