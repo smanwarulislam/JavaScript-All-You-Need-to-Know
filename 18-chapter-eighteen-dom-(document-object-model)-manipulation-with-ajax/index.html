@@ -31,12 +31,12 @@
     
     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
 
-    <ul class="list-group my-5" id="list">
+    <!-- <ul class="list-group my-5" id="list"> -->
       <!-- <li class="list-group-item" name="list-item-one">One</li> -->
-      <li class="list-group-item" id="list-item-one">One</li>
+      <!-- <li class="list-group-item" id="list-item-one">One</li>
       <li class="list-group-item">Two</li>
       <li class="list-group-item">Three</li>
-    </ul>
+    </ul> -->
 
     <!-- <button type="button" class="btn btn-success" id="btn">Add Me</button> -->
 
@@ -44,16 +44,16 @@
       <p>(<span id="x-value">0</span>, <span id="y-value">0</span>)</p>
     </div> -->
     
-    <div>
+    <!-- <div> -->
       <!-- Form controls -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="name">What is Your Name?</label>
         <input type="text" class="form-control" id="elementName" placeholder="Enter Name">
         <p id="show-name"></p>
-      </div>
+      </div> -->
 
       <!-- Checkboxes -->
-      <div class="my-5">
+      <!-- <div class="my-5">
         <label>Choose Your Skills</label>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="gridCheck1" name="skills" value="C Programming">
@@ -84,8 +84,36 @@
             <span id="result"> </span>
           </p>
         </div>
+      </div> -->
+    <!-- </div> -->
+
+    <!-- Forms -->
+    <form id="form">
+      <label> <strong>Please Fill The Form</strong> </label>
+      <div class="form-group">
+        <label for="name">What is Your Name?</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
       </div>
-    </div>
+      <div class="form-group">
+        <label for="email">What is Your Email?</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+      </div>
+      <div class="form-group">
+        <label for="password">What is Your Password?</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password">
+      </div>
+      <div class="form-group">
+        <label for="country">Select Your Country</label>
+        <select class="form-control" id="country" name="country">
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="India">India</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+        </select>
+      </div>
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
