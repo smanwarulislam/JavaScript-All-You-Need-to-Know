@@ -40,4 +40,6 @@
 
 // import './lessons/lesson21';
 
-import './lessons/lesson22';
+// import './lessons/lesson22';
+
+import './lessons/lesson23';
