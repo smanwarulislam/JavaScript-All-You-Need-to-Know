@@ -1,0 +1,22 @@
+What is Library in JavaScript?
+
+How to learn any new libraries and technologies?
+
+What is Library in Programming?
+
+https://www.webopedia.com/definitions/library/
+
+(1) A collection of files.
+(2) In programming, a library is a collection of precompiled routines that a program can use. The routines, sometimes called modules, are stored in object format. Libraries are particularly useful for storing frequently used routines because you do not need to explicitly link them to every program that uses them.
+(3) A Library is a solution to some common arises problems.
+
+JavaScript Libraries:
+jQuery
+Lodash
+Underscore.js
+Math.js
+Moment.js
+collect.js
+Axios
+
+The best way to learn anything is by following its documentation.
