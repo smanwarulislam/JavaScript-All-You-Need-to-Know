@@ -1,0 +1,102 @@
+jQuery Library Introduction
+
+jQuery
+https://jquery.com/
+
+What is jQuery?
+jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+
+- First of all, we need to know what jQuery provides us and how to install and work on jQuery?
+
+Download
+https://jquery.com/download/
+
+Downloading jQuery
+
+- There are many ways you can use any JavaScript library if you want to use it on the front-end.
+- First of all, go to the official website of that library. From there, download the file, that is, the JavaScript file.
+
+jQuery
+
+Download the compressed, production jQuery 3.6.0
+https://code.jquery.com/jquery-3.6.0.min.js
+
+Download the uncompressed, development jQuery 3.6.0
+https://code.jquery.com/jquery-3.6.0.js
+
+Download the map file for jQuery 3.6.0
+https://code.jquery.com/jquery-3.6.0.min.map
+
+- In other words, all the jQuery-related JavaScript code is written inside those files.
+- So download the file.
+- After downloading, you will link this file (jQuery) in the same way you link your scripts to the index.html file.
+- But remember, you need to link the library file above all else. This means that the script file should be at the bottom and the library file should be at the top.
+
+- Also, almost every library company or those who provide libraries provide us with CDNs.
+
+Using jQuery with a CDN
+
+content delivery network, or content distribution network (CDN)
+
+CDNs can offer a performance benefit by hosting jQuery on servers spread across the globe. This also offers an advantage that if the visitor to your webpage has already downloaded a copy of jQuery from the same CDN, it won't have to be re-downloaded.
+
+- CDN means a web URL or a link to a website.
+- If you visit that link (CDN), we will get the complete source code of this library.
+- If we wish, we can also link this CDN link to our HTML file, instead of downloading and linking the entire library file. Then the same thing will happen. There is no problem.
+- In that case, you must try to get the CDN from trusted sites such as Google.
+
+Other CDNs
+
+Google CDN
+https://developers.google.com/speed/libraries#jquery
+
+Microsoft CDN
+https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview#jQuery_Releases_on_the_CDN_0
+
+CDNJS CDN
+https://cdnjs.com/libraries/jquery
+
+jsDelivr CDN
+https://www.jsdelivr.com/package/npm/jquery
+
+- And now no one actually uses this CDN, library file downloading system.
+- We have excellent package managers.
+
+Downloading jQuery using npm or Yarn
+
+- The most popular package manager is Node package manager (npm).
+
+jQuery is registered as a package on npm. You can install the latest version of jQuery with the npm CLI command:
+npm install jquery
+
+As an alternative you can use the Yarn CLI command:
+yarn add jquery
+
+This will install jQuery in the node_modules directory. Within node_modules/jquery/dist/ you will find an uncompressed release, a compressed release, and a map file.
+
+- npm or Yarn is almost the same.
+- There are some issues with the npm package manager.
+- Behind the Scene Yarn also uses npm.
+- But Yarn has tried to solve the problems that npm had.
+- Yarn is a little faster and a little better than npm.
+
+Downloading jQuery using Bower
+
+- Also, Bower was used earlier when npm was not so popular.
+- But now the use of Bower is not seen very much. Many use but much less than before.
+
+jQuery is also registered as a package with Bower. You can install the latest version of jQuery with the command:
+bower install jquery
+
+This will install jQuery to Bower's install directory, the default being bower_components. Within bower_components/jquery/dist/ you will find an uncompressed release, a compressed release, and a map file.
+
+The jQuery Bower package contains additional files besides the default distribution. In most cases you can ignore these files, however, if you wish to download the default release on its own you can use Bower to install jQuery from one of the above URLs instead of the registered package. For example, if you wish to install just the compressed jQuery file, you can install just that file with the following command:
+bower install https://code.jquery.com/jquery-3.6.0.min.js
+
+- npm or Yarn is actually the package manager of JavaScript or Node.js.
+- Where Yarn is a package manager created for front-end only.
+
+API Documentation
+https://api.jquery.com/
+
+jQuery API
