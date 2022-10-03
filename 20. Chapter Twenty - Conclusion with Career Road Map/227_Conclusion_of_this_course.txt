@@ -1,0 +1,27 @@
+20. Chapter Twenty - Conclusion with Career Road Map
+
+Chapter Twenty
+Conclusion of This Course
+
+Conclusion: What Next?
+
+JavaScript is just a tool.
+
+JavaScript is a language.
+
+- We need to learn the framework.
+- We need to learn about the library.
+- Some specific tasks should be learned.
+
+Where will we apply the JavaScript language?
+- JavaScript language can be applied almost everywhere.
+- But mainly for development purposes, JavaScript language is used more.
+- As Python is used to work with Artificial Intelligence or Machine Learning.
+
+Mainly we can do four types of development using JavaScript. Also, numerous other developments can be made.
+
+Mainly we can do four types of development using JavaScript:
+- Front-end development
+- Back-end development
+- Mobile application development
+- Desktop application development
