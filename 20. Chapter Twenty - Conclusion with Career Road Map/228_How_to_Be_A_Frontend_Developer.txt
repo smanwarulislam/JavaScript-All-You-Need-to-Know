@@ -1,0 +1,139 @@
+20. Chapter Twenty - Conclusion with Career Road Map
+
+Chapter Twenty
+How to be a Frontend Developer
+
+If we want to be front-end developers, what do we have to do?
+What to learn? Which way to follow? What roadmap to follow?
+
+There is confusion among many people between these two terms, frontend developer and web designer.
+- The bottom line is that both have the same job. Designing the design of the front end, that is, the design of the website.
+- But if we think a little technical, then the work of a web designer is only imagined as HTML, CSS, Bootstrap, PSD to HTML.
+- Web designers are those who design HTML, CSS, Bootstrap, or PSD to HTML.
+- But when I talk about frontend developers they are not designers at all.
+
+So if you want to become a frontend developer, you must first become a good web designer.
+- To be a web designer you need to know HTML, CSS, and Bootstrap.
+
+HTML (HyperText Markup Language):
+- HTML is the only language on the web that our web browser understands.
+- If we normally write a CSS or JavaScript code and want to run it in the browser, it is never possible.
+- Each language's code is first embedded with HTML and then that code is executed in the browser.
+- That's why first we need to learn HTML.
+
+CSS (Cascading Style Sheets):
+- HTML -> CSS
+- If you want to become a good developer, you must first know HTML, and CSS well.
+
+-> Next should learn Bootstrap or any CSS framework.
+
+Bootstrap (front-end framework):
+- HTML -> CSS -> Bootstrap
+- Bootstrap · The most popular HTML, CSS, and JS library in the world.
+- The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+- Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
+
+Responsive web design:
+- Responsive web design (RWD) or responsive design is an approach to web design that aims to make web pages render well on a variety of devices and window or screen sizes from minimum to maximum display size to ensure usability and satisfaction.
+What is Responsive Web Design?
+- Responsive web design is about creating websites that automatically adjust themselves to look good on all devices, from small phones to large desktops.
+
+jQuery (jQuery JavaScript Library):
+- HTML -> CSS -> Bootstrap -> Responsive web design -> JavaScript -> jQuery
+What is jQuery?
+- jQuery is a fast, small, and feature-rich JavaScript library.
+- jQuery is a lightweight, "write less, do more", JavaScript library.
+
+When you become a beginner-level web designer (HTML, CSS, JavaScript, jQuery) your target will be to choose any frontend library/framework.
+
+React (also known as React.js or ReactJS) · (JavaScript library):
+- React is a JavaScript library for building user interfaces.
+What Is React?
+- React is a declarative, efficient, and flexible JavaScript library for building user interfaces.
+- It lets you compose complex UIs from small and isolated pieces of code called “components”.
+
+React (JavaScript library):
+- React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on UI components.
+- It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.
+- React can be used as a base in the development of single-page, mobile, or server-rendered applications with frameworks like Next.js.
+- However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.
+
+It (React) contains nothing but core JavaScript functionality.
+If you have a good understanding of ES6 terms and if you are at least competent to work with Object Oriented, you can build any application using React. You can create the front end of any web application.
+
+-> With this (React), however, another tool is needed. Another tool called Redux is needed.
+
+-> With this (React)
+Redux (JavaScript library):
+- Redux is a predictable state container for JavaScript apps. (Not to be confused with a WordPress framework – Redux Framework)
+- It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time-traveling debugger.
+- You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), and has a rich ecosystem of add-ons.
+- Redux is an open-source JavaScript library for managing and centralizing application state.
+- It is most commonly used with libraries such as React or Angular for building user interfaces.
+- Similar to (and inspired by) Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark. Since mid-2016, the primary maintainers are Mark Erikson and Tim Dorr.
+
+Vue.js (Vue.js - The Progressive JavaScript Framework | Vue.js):
+- An approachable, performant, and versatile framework for building web user interfaces.
+- Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+- Vue.js (commonly referred to as Vue; pronounced "view" is an open-source model–view–viewmodel front-end JavaScript framework for building user interfaces and single-page applications.
+- It was created by Evan You, and is maintained by him and the rest of the active core team members.
+What is Vue?
+- Vue (pronounced /vjuː/, like view) is a JavaScript framework (progressive framework) for building user interfaces.
+- It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.
+- It is designed from the ground up to be incrementally adoptable, and can easily scale between a library and a framework depending on different use cases.
+- It consists of an approachable core library that focuses on the view layer only, and an ecosystem of supporting libraries that helps you tackle complexity in large Single-Page Applications.
+
+Angular (web framework):
+- The modern web developer’s platform
+- Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.
+- Angular (also referred to as "Angular 2+") is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.
+- Angular is a complete rewrite from the same team that built AngularJS.
+
+Angular is a complete framework.
+
+Why is React (React.js or ReactJS) or Vue.js so popular than Angular?
+- The reason for this is flexibility.
+
+-> But if you want to learn Angular, you need to learn another language called TypeScript.
+- TypeScript (A preprocessor for JavaScript)
+
+TypeScript (Programming language):
+- TypeScript is JavaScript with syntax for types.
+- TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
+- TypeScript is a free and open-source programming language developed and maintained by Microsoft.
+- It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+- It is designed for the development of large applications and transpiles to JavaScript.
+- As it is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs.
+- TypeScript is a language for application-scale JavaScript.
+- TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, and on any OS.
+- TypeScript compiles to readable, standards-based JavaScript.
+- TypeScript may be used to develop JavaScript applications for both client-side and server-side execution (as with Node.js or Deno).
+- Multiple options are available for transpilation.
+- The default TypeScript Compiler can be used, or the Babel compiler can be invoked to convert TypeScript to JavaScript.
+
+There are some extra facilities that are not available in JavaScript or ES6, which are available inside TypeScript.
+TypeScript code needs to be converted to JavaScript code. Otherwise, you will never be able to run TypeScript code in the browser.
+Angular combined with TypeScript.
+If you want to work with Angular, you need to know TypeScript.
+
+Svelte:
+- Cybernetically enhanced web apps
+What is Svelte?
+- Svelte is a new way to build web applications. It's a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.
+- Svelte is a radical new approach to building user interfaces.
+- Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app.
+- Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.
+- Svelte is a tool for building fast web applications.
+- It is similar to JavaScript frameworks such as React and Vue, which share the goal of making it easy to build slick interactive user interfaces.
+- But there's a crucial difference:
+- Svelte convert your app into ideal JavaScript at build time, rather than interpreting your application code at run time.
+- This means you don't pay the performance cost of the framework's abstractions, and you don't incur a penalty when your app first loads.
+- You can build your entire app with Svelte, or you can add it incrementally to an existing codebase.
+- You can also ship components as standalone packages that work anywhere, without the overhead of a dependency on a conventional framework.
+- Svelte is a free and open-source front-end compiler created by Rich Harris and maintained by the Svelte core team members.
+- Svelte is not a monolithic JavaScript library imported by applications: instead, Svelte compiles HTML templates to specialized code that manipulates the DOM directly, which may reduce the size of transferred files and give better client performance; application code is also processed by the compiler, inserting calls to automatically recompute data and re-render UI elements when the data they depend on is modified.
+- This also avoids the overhead associated with runtime intermediate representations, such as virtual DOM, unlike traditional frameworks (such as React and Vue) which carry out the bulk of their work at runtime, i.e in the browser.
+- The compiler itself is written in TypeScript.
+
+It (Svelte) is a completely different concept.
