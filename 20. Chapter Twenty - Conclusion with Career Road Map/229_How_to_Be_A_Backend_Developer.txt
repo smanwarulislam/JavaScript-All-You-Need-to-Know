@@ -1,0 +1,102 @@
+20. Chapter Twenty - Conclusion with Career Road Map
+
+Chapter Twenty
+How to be a Backend Developer
+
+What should I do if I don't want to be a frontend developer and only want to work on the backend is it 100% possible with JavaScript?
+- First of all, you can be sure that if you want to be a backend developer only then it is 100% possible with JavaScript.
+- And secondly, even though you want to be a backend developer, you must have basic knowledge of HTML, and CSS, no matter how much you want to work on the backend.
+- Then learning any backend framework will do.
+
+What topics do you need to learn at the backend?
+- Middleware, Routing, Authentication, Template processor (also known as a template engine or template parser), REST API (also known as RESTful API), Email Handling/Email Sending, Notifications, Socket are some of these types of terms. You should learn these terms.
+
+Node.js:
+- Node.js® is an open-source, cross-platform JavaScript runtime environment.
+- Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on a JavaScript Engine (i.e. V8 engine) and executes JavaScript code outside a web browser, which was designed to build scalable network applications.
+- Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
+- Consequently, Node.js represents a "JavaScript everywhere" paradigm, unifying web application development around a single programming language, rather than different languages for server-side and client-side scripts.
+
+Node.js is a JavaScript runtime, which runs JavaScript codes on the desktop or server.
+So some popular frameworks are built based on this runtime which is great for backend development in Node.js.
+
+When it comes to web development using Node.js, the first name that comes up is Express.js, or simply Express.
+
+Express.js, or simply Express:
+- Express - Node.js web application framework
+- Fast, unopinionated, minimalist web framework for Node.js.
+- Express.js, or simply Express, is a back-end web application framework for building RESTful APIs with Node.js, released as free and open-source software under the MIT License.
+- It is designed for building web applications and APIs.
+- It has been called the de facto standard server framework for Node.js.
+- The original author, TJ Holowaychuk, described it as a Sinatra-inspired server, meaning that it is relatively minimal with many features available as plugins.
+- Express is the back-end component of popular development stacks like the MEAN, MERN, or MEVN stack, together with the MongoDB database software and a JavaScript front-end framework or library.
+
+Web Applications
+- Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+Express.js is called a micro-framework.
+
+Meteor, or MeteorJS (web framework):
+- Meteor Software: A Platform to Build, Host, Deploy and Scale Full-Stack Javascript Applications
+- Meteor is an open source framework for seamlessly building and deploying Web, Mobile, and Desktop applications in Javascript.
+- Meteor, the JavaScript App Platform
+- Meteor is an ultra-simple environment for building modern web applications.
+- Meteor, or MeteorJS, is a partly proprietary, mostly free, and open-source isomorphic JavaScript web framework written using Node.js.
+- Meteor allows for rapid prototyping and produces cross-platform (Android, iOS, Web) code.
+- The server-side MongoDB program is the only proprietary component of Meteor and is part of the Meteor download bundle. It is possible to use Meteor without using the server-side MongoDB.
+- On the client, Meteor can be used with any popular front-end JS framework, Vue, React, Svelte, Angular, or Blaze.
+What is Meteor?
+- Meteor is a full-stack JavaScript platform for developing modern web and mobile applications.
+- Meteor includes a key set of technologies for building connected-client reactive applications, a build tool, and a curated set of packages from the Node.js and general JavaScript community.
+· Meteor allows you to develop in one language, JavaScript, in all environments: application server, web browser, and mobile device.
+· Meteor uses data on the wire, meaning the server sends data, not HTML, and the client renders it.
+· Meteor embraces the ecosystem, bringing the best parts of the extremely active JavaScript community to you in a careful and considered way.
+· Meteor provides full stack reactivity, allowing your UI to seamlessly reflect the true state of the world with the minimal development effort.
+
+AdonisJS:
+- AdonisJS - A fully featured web framework for Node.js
+- The Node.js Framework highly focused on developer ergonomics, stability, and confidence
+
+-> AdonisJS
+- Fullstack MVC framework for Node.js
+- AdonisJs is a full-stack Web framework with a focus on ergonomics and speed.
+- It takes care of much of the Web development hassles, offering you a clean and stable API to build Web apps and microservices.
+- AdonisJS is a backend framework for Node.js. The framework is written in TypeScript, and the application you will create using AdonisJS is also going to be in TypeScript.
+
+NestJS (Nest):
+- NestJS - A progressive Node.js framework
+- A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+- A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications on top of TypeScript & JavaScript (ES6, ES7, ES8)
+
+-> NestJS (Nest) · Introduction
+- Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications.
+- It uses progressive (modern) JavaScript, is built with and fully supports TypeScript (yet still enables developers to code in pure JavaScript), and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).
+- Under the hood, Nest makes use of robust HTTP Server frameworks like Express (the default), but also, provides compatibility with a wide range of other libraries, like e.g. Fastify, allowing for easy use of the myriad third-party plugins which are available.
+- Nest provides a level of abstraction above these common Node.js frameworks (Express/Fastify) but also exposes their APIs directly to the developer. This gives developers the freedom to use the myriad of third-party modules which are available for the underlying platform.
+
+-> NestJS (Nest) · Philosophy
+- In recent years, thanks to Node.js, JavaScript has become the “lingua franca” of the web for both front and backend applications.
+- This has given rise to awesome projects like Angular, React, and Vue, which improve developer productivity and enable the creation of fast, testable, and extensible front-end applications.
+- However, while plenty of superb libraries, helpers, and tools exist for Node (and server-side JavaScript), none of them effectively solve the main problem of - Architecture.
+- Nest provides an out-of-the-box application architecture that allows developers and teams to create highly testable, scalable, loosely coupled, and easily maintainable applications. The architecture is heavily inspired by Angular.
+
+Koa (Koa.js):
+- Koa - next generation web framework for node.js
+- Koa is a new web framework designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.
+- By leveraging async functions, Koa allows you to ditch callbacks and greatly increase error handling.
+- Koa does not bundle any middleware within its core, and it provides an elegant suite of methods that make writing servers fast and enjoyable.
+- Expressive middleware for node.js using ES2017 async functions
+- Expressive HTTP middleware framework for node.js to make web applications and APIs more enjoyable to write.
+- Koa's middleware stack flows in a stack-like manner, allowing you to perform actions downstream and then filter and manipulate the response upstream.
+- Koa is not bundled with any middleware.
+
+Sails.js (or Sails):
+- Sails.js | Realtime MVC Framework for Node.js
+- Sails is the most popular MVC framework for Node.js, designed to emulate the familiar MVC pattern of frameworks like Ruby on Rails, but with support for the requirements of modern apps: data-driven APIs with a scalable, service-oriented architecture.
+- Sails.js is a web framework that makes it easy to build custom, enterprise-grade Node.js apps.
+- It is designed to resemble the MVC architecture from frameworks like Ruby on Rails, but with support for the more modern, data-oriented style of web app & API development.
+- It's especially good for building real-time features like chat.
+- Sails.js (or Sails) is a model–view–controller (MVC) web application framework developed atop the Node.js environment, released as free and open-source software under the MIT License.
+- It is designed to make it easy to build custom, enterprise-grade Node.js web applications, and APIs.
+- Emulating the MVC architecture of other frameworks, like Ruby on Rails, offers similar patterns and familiarity, reducing the cognitive burden when switching between other frameworks/languages.
