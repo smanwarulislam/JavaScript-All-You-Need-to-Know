@@ -1,0 +1,28 @@
+20. Chapter Twenty - Conclusion with Career Road Map
+
+Chapter Twenty
+How to be a Full Stack Developer
+
+There are many stacks on top of the JavaScript language if you want to be a full-stack developer.
+
+Stack means a system with many technologies which we will make web applications by following the system, each of these technologies is called a stack.
+- Among these, one of the most popular stacks was the MEAN stack.
+- MEAN (MongoDB, Express.js, AngularJS (or Angular), and Node.js)
+- Next came the MERN stack. A variation known as MERN replaces Angular with React.
+- MERN (MongoDB, Express.js, React (also known as React.js or ReactJS), and Node.js)
+- Next came the MEVN stack. MEVN is again a web stack just like MERN and MEAN though it is relatively new as the front-end technology used in it which is Vue.js.
+- MEVN (MongoDB, Express.js, Vue.js, and Node.js)
+
+To develop the backend you must take the help of Node.js because Node.js is a JavaScript runtime.
+- After that the framework you need to choose for the backend is Express.js (or simply Express).
+- Finally, you have to choose a database and the name of this database is MongoDB.
+
+MongoDB (The MongoDB Database):
+- MongoDB: The Developer Data Platform | MongoDB | MongoDB
+- MongoDB is a source-available cross-platform document-oriented database program.
+- Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+- MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License (SSPL) which is deemed non-free by several distributions.
+
+These three things basically Node.js, Express.js, and MongoDB Database will support you in the backend.
+- These three technologies (Node.js, Express.js, MongoDB) will support you to create a complete backend.
+- Then you can choose any technology as frontend either React (React.js) or Angular or Vue.js.
