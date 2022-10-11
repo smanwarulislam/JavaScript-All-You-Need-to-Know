@@ -1,0 +1,78 @@
+20. Chapter Twenty - Conclusion with Career Road Map
+
+Chapter Twenty
+How to be a Desktop Apps Developer
+
+Can we make desktop applications using JavaScript?
+- We can do anything using JavaScript.
+- If you want to make desktop applications using JavaScript then we have the one and only Electron (software framework).
+- Electron (software framework) is the best framework to create desktop applications using JavaScript.
+
+Electron (software framework):
+- Electron | Build cross-platform desktop apps with JavaScript, HTML, and CSS.
+- The Electron framework lets you write cross-platform desktop applications using JavaScript, HTML, and CSS. It is based on Node.js and Chromium and is used by the Atom editor and many other apps.
+
+→ Electron
+- Build cross-platform desktop apps with JavaScript, HTML, and CSS
+- If you can build a website, you can build a desktop app. Electron is a framework for creating native applications with web technologies like JavaScript, HTML, and CSS. It takes care of the hard parts so you can focus on the core of your application.
+
+→ Electron
+- Web Technologies
+· Electron uses Chromium and Node.js so you can build your app with HTML, CSS, and JavaScript.
+
+- Cross Platform
+· Compatible with Mac, Windows, and Linux, Electron apps build and run on three platforms.
+
+- Open Source
+· Electron is an open source project maintained by the OpenJS Foundation and an active community of contributors.
+
+What is Electron?
+- Electron is a framework for building desktop applications using JavaScript, HTML, and CSS.
+- By embedding Chromium and Node.js into its binary, Electron allows you to maintain one JavaScript codebase and create cross-platform apps that work on Windows, macOS, and Linux — no native development experience is required.
+
+→ Electron (software framework)
+- Electron (formerly known as Atom Shell) is a free and open-source software framework developed and maintained by GitHub.
+- The framework is designed to create desktop applications using web technologies (mainly HTML, CSS, and JavaScript, though other technologies such as frontend frameworks and Web Assembly are possible) which are rendered using a flavor of the Chromium browser engine, and a backend using the Node.js runtime environment.
+- Additionally, it also uses various APIs to allow things such as native integration with Node services, and an Inter-process communication module.
+- It was originally built for Atom.
+- Electron is the main GUI framework behind several open-source projects including Atom, GitHub Desktop, Light Table, Visual Studio Code, WordPress Desktop, and Eclipse Theia.
+
+We also have more alternate options. Electron is the best though.
+
+NW.js (node-webkit is renamed NW.js):
+- NW.js (previously known as node-webkit) lets you call all Node.js modules directly from DOM and enables a new way of writing applications with all Web technologies. It was previously known as “node-webkit” project.
+
+→ NW.js
+- NW.js is an app runtime based on Chromium and node.js.
+- You can write native apps in HTML and JavaScript with NW.js.
+- It also lets you call Node.js modules directly from the DOM/WebWorker and enables a new way of writing native applications with all Web technologies. Further, you can easily package a web application into a native application.
+- It was created in the Intel Open Source Technology Center.
+
+→ NW.js (Features)
+· New way of writing native applications using web technologies: HTML5, CSS3, JS, and WebGL.
+· Full support for the features in the browser.
+· Complete support for Node.js APIs and all its third-party modules.
+· Call Node.js modules directly from the DOM and Web Workers.
+· Good performance: Node and WebKit run in the same thread: Function calls are made straightforwardly; objects are in the same heap and can just reference each other.
+· Easy to package and distribute apps.
+· Available on Linux, Mac OS X, and Windows.
+
+AppJS:
+- Build Desktop Applications for Linux, Windows, and Mac using HTML, CSS, and Javascript
+
+Why AppJS?
+- Because it is simple and yet powerful.
+- Using AppJS you don't need to worry about coding cross-platform or learning new languages and tools.
+- You are already familiar with HTML, CSS, and Javascript.
+- What is better than this stack for application development?
+- Besides, AppJS uses Chromium at the core so you get the latest HTML 5 APIs working.
+- So relax and focus on the task your application should do.
+
+→ AppJS
+Deprecation Notice
+- AppJS project has not been actively developed for a few years. Please check out NW.js or Electron instead.
+
+You can do almost anything you want to do with JavaScript, even Machine learning (ML).
+
+→ Machine learning (ML)
+- If you do a little search, you can see how machine learning can be done using JavaScript.
