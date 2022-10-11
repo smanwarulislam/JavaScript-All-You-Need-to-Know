@@ -1,0 +1,104 @@
+20. Chapter Twenty - Conclusion with Career Road Map
+
+Chapter Twenty
+How to be a Mobile Apps Developer
+
+You can already build Android and iOS cross-platform mobile apps using JavaScript.
+
+This concept (cross-platform mobile apps) was probably first introduced by Adobe PhoneGap.
+
+PhoneGap:
+- Adobe PhoneGap
+
+Is PhoneGap still alive?
+- After September 2012, Adobe's PhoneGap Build service allows programmers to upload CSS, HTML, and JavaScript source code to a "cloud compiler" that generates apps for every supported platform. This service was discontinued in 2020.
+
+Apache Cordova (formerly PhoneGap):
+· Mobile apps with HTML, CSS & JS
+· Target multiple platforms with one code base
+· Free and open source
+- Apache Cordova (formerly PhoneGap) is a mobile application development framework created by Nitobi.
+- Adobe Systems purchased Nitobi in 2011, rebranded it as PhoneGap, and later released an open-source version of the software called Apache Cordova.
+- Apache Cordova enables software programmers to build hybrid web applications for mobile devices using CSS3, HTML5, and JavaScript, instead of relying on platform-specific APIs like those in Android, iOS, or Windows Phone.
+- It enables the wrapping up of CSS, HTML, and JavaScript code depending on the platform of the device.
+- It extends the features of HTML and JavaScript to work with the device.
+- The resulting applications are hybrid, meaning that they are neither truly native mobile applications nor purely Web-based.
+- They are not native because all layout rendering is done via Web views instead of the platform's native UI framework.
+- They are not Web apps because they are packaged as apps for distribution and have access to native device APIs.
+
+The software was previously called just "PhoneGap", then "Apache Callback".
+
+Ionic (mobile app framework):
+- Ionic Framework - The Cross-Platform App Development Leader
+- The mobile SDK for the Web.
+- An open-source mobile UI toolkit for building modern, high-quality cross-platform mobile apps from a single code base in Angular, React, and Vue.
+- A powerful cross-platform UI toolkit for building native-quality iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript.
+- Ionic is an open-source app development toolkit for building modern, fast, top-quality cross-platform native and Progressive Web Apps from a single codebase with JavaScript and the Web.
+- Ionic is based on Web Components, which enables significant performance, usability, and feature improvements alongside support for popular web frameworks like Angular, React, and Vue.
+- Ionic is a complete open-source SDK for hybrid mobile app development created by Max Lynch, Ben Sperry, and Adam Bradley of Drifty Co. in 2013.
+- The original version was released in 2013 and built on top of AngularJS and Apache Cordova.
+- However, the latest release was re-built as a set of Web Components, allowing the user to choose any user interface framework, such as Angular, React, or Vue.js.
+- It also allows the use of Ionic components with no user interface framework at all.
+- Ionic provides tools and services for developing hybrid mobile, desktop, and progressive web apps based on modern web development technologies and practices, using Web technologies like CSS, HTML5, and Sass.
+- In particular, mobile apps can be built with these Web technologies and then distributed through native app stores to be installed on devices by utilizing Cordova or Capacitor.
+
+→ Introduction to Ionic
+- Ionic is an open-source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like Angular, React, and Vue.
+
+But the problem with PhoneGap, Apache Cordova, or Ionic is that none of them convert to native code.
+
+NativeScript:
+- Empowering JavaScript with native platform APIs.
+- Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java). Use what you love Angular, Capacitor, Ionic, React, Svelte, Vue and you name it compatible.
+- NativeScript empowers you to access native APIs from JavaScript directly. Currently, iOS and Android runtimes are provided for rich mobile development across a variety of diverse use cases.
+- NativeScript is an open-source framework to develop mobile apps on the Apple iOS and Android platforms.
+- It was originally conceived and developed by Progress.
+- At the end of 2019 responsibility for the NativeScript project was taken over by long-time Progress partner, nStudio. In December 2020 nStudio also oversaw the induction of NativeScript into OpenJS Foundation as an Incubating Project.
+- NativeScript apps are built using JavaScript, or by using any programming language that transpiles to JavaScript, such as TypeScript.
+- NativeScript supports the Angular and Vue JavaScript frameworks.
+- Mobile applications built with NativeScript result in fully native apps, which use the same APIs as if they were developed in Xcode or Android Studio.
+- Additionally, software developers can re-purpose third-party libraries from CocoaPods, Maven, and npm.js in their mobile applications without the need for wrappers.
+
+The most popular JavaScript framework is React Native.
+
+React Native:
+- React Native · Learn once, write anywhere
+- A framework for building native applications using React
+
+→ React Native
+- Learn once, write anywhere: Build mobile apps with React.
+- React Native is an open-source UI software framework created by Meta Platforms, Inc.
+- It is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web,  Windows, and UWP by enabling developers to use the React framework along with native platform capabilities. It is also being used to develop virtual reality applications at Oculus.
+
+→ React Native
+- Create native apps for Android and iOS using React
+· React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.
+· Use a little—or a lot. You can use React Native today in your existing Android and iOS projects or you can create a whole new app from scratch.
+
+- Written in JavaScript—rendered with native code
+· React primitives render to native platform UI, meaning your app uses the same native platform APIs other apps do.
+· Many platforms, one React.
+· Create platform-specific versions of components so a single codebase can share code across platforms.
+· With React Native, one team can maintain two platforms and share a common technology—React.
+
+- Native Development For Everyone
+· React Native lets you create truly native apps and doesn't compromise your users' experiences.
+· It provides a core set of platform-agnostic native components like View, Text, and Image that map directly to the platform’s native UI building blocks.
+
+- Seamless Cross-Platform
+· React components wrap existing native code and interact with native APIs via React’s declarative UI paradigm and JavaScript.
+· This enables native app development for whole new teams of developers and can let existing native teams work much faster.
+
+- Fast Refresh
+· See your changes as soon as you save.
+· With the power of JavaScript, React Native lets you iterate at lightning speed. No more waiting for native builds to finish. Save, see, repeat.
+
+- Facebook Supported, Community Driven
+· Facebook released React Native in 2015 and has been maintaining it ever since.
+
+→ React Native
+- React Native brings React's declarative UI framework to iOS and Android. With React Native, you use native UI controls and have full access to the native platform.
+· Declarative. React makes it painless to create interactive UIs. Declarative views make your code more predictable and easier to debug.
+· Component-Based. Build encapsulated components that manage their state, then compose them to make complex UIs.
+· Developer Velocity. See local changes in seconds. Changes to JavaScript code can be live-reloaded without rebuilding the native app.
+· Portability. Reuse code across iOS, Android, and other platforms.
