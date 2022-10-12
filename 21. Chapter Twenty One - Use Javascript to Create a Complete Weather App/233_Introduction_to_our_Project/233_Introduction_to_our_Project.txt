@@ -1,0 +1,71 @@
+Introduction to our Project
+
+This app is a simple weather app.
+
+→ weather app
+- The front end of this application uses REST API (also known as RESTful API). And some other interactivity tasks are done with normal JavaScript.
+- Then if we want to make this app live then we need a server.
+- So if you work with PHP then you need a PHP server, and MySQL database and you have to host your site on a third-party hosting site.
+- Similarly, Node.js also has many functions.
+- If we want to upload any application to the server site and if it is not a static site then what we need to do is to create a backend server. Our backend server is built using Node.js.
+- And at the end, I deployed the entire application to Heroku.
+- Heroku is a cloud-based system where we can host our applications. Much like shared hosting but actually a different concept. It (Heroku) is a server on which we have hosted our application. So we have deployed this entire application on Heroku.
+
+Heroku:
+- Cloud Application Platform | Heroku
+- Heroku is a cloud platform as a service (PaaS) supporting several programming languages.
+- One of the first cloud platforms, Heroku has been in development since June 2007, when it supported only the Ruby programming language, but now supports Java, Node.js, Scala, Clojure, Python, PHP, and Go.
+- For this reason, Heroku is said to be a polyglot platform as it has features for a developer to build, run and scale applications in a similar manner across most languages.
+- Heroku was acquired by Salesforce in 2010 for $212 million.
+
+What is Heroku?
+- Heroku is a container-based cloud Platform as a Service (PaaS).
+- Developers use Heroku to deploy, manage, and scale modern apps.
+- Our platform is elegant, flexible, and easy to use, offering developers the simplest path to getting their apps to market.
+- Heroku is fully managed, giving developers the freedom to focus on their core product without the distraction of maintaining servers, hardware, or infrastructure.
+- The Heroku experience provides services, tools, workflows, and polyglot support—all designed to enhance developer productivity.
+
+So what technology have we used here (weather app)?
+- For the front end, I used just normal Node.js, used Axios, and nothing else. Another thing I used is location.
+- And we used OpenWeatherMap to send requests.
+- OpenWeatherMap is a third-party API that basically provides you with weather API in exchange for money. But we are using the free version. We do not have to provide any dollars for development purposes. We can send any request. Of course, there are limitations. If we send requests more than this limitation, they will not accept our request or cancel it.
+
+OpenWeatherMap:
+- Сurrent weather and forecast - OpenWeatherMap
+- Weather forecasts, nowcasts, and history in a fast and elegant way
+- For each point on the globe, OpenWeather provides historical, current, and forecasted weather data via light-speed APIs.
+- OpenWeatherMap is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts, and historical weather data for any geographical location.
+- The company provides a minute-by-minute hyperlocal precipitation forecast for any location.
+- The convolutional machine learning model is used to utilize meteorological broadcast services and data from airport weather stations, on-ground radar stations, weather satellites, remote sensing satellites, METAR, and automated weather stations.
+
+So here (weather app) we are using the frontend:
+· Vanilla JS or Core JavaScript
+· Axios
+· DOM Manipulation
+· And the OpenWeather API
+
+We need a database to store the history. We need a backend service.
+- We used:
+· Node.js
+· body-parser middleware
+· Mongoose
+· MongoDB database
+
+Mongoose (MongoDB):
+- Mongoose ODM v6.6.5
+- Elegant MongoDB object modeling for Node.js
+- Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks.
+- Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks, and more, out-of-the-box.
+- Mongoose is a JavaScript object-oriented programming library that creates a connection between MongoDB and the Node.js JavaScript runtime environment.
+
+We used mLab to use this MongoDB database.
+
+mLab:
+- Connecting to Your Database | mLab Documentation & Support
+- MongoDB Atlas Database | Multi-Cloud Database Service | MongoDB
+- mLab is a fully managed cloud database service that hosts MongoDB databases.
+- mLab runs on cloud providers Amazon, Google, and Microsoft Azure, and has partnered with platform-as-a-service providers.
+
+You are made to feel that JavaScript is a standalone language that you can do anything with. This project (weather app) is mainly to give this feeling.
+
+You will understand how powerful JavaScript is. One language (JavaScript) but we can use it everywhere.
